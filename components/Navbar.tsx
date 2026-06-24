@@ -40,12 +40,12 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className="fixed top-0 left-0 right-0 z-50 h-[120px] flex items-center bg-primary-black border-b border-royal-gold/10"
+        className="fixed top-0 left-0 right-0 z-50 h-[80px] lg:h-[120px] flex items-center bg-primary-black border-b border-royal-gold/10"
       >
         <div className="w-full max-w-7xl mx-auto px-6 md:px-8 flex justify-between items-center">
           {/* Logo / Brand Name */}
           <Link href="/" className="flex items-center select-none">
-            <div className="relative w-28 h-28">
+            <div className="relative w-20 h-20 sm:w-28 sm:h-28">
               <Image
                 src="/images/logo.png"
                 alt="Classic Biryani Logo"
@@ -106,7 +106,7 @@ export default function Navbar() {
 
       {/* Mobile Drawer Menu */}
       <div
-        className={`fixed inset-0 z-40 bg-primary-black/98 lg:hidden pt-[120px] transition-all duration-300 flex flex-col justify-between ${
+        className={`fixed inset-0 z-40 bg-primary-black/98 lg:hidden pt-[80px] transition-all duration-300 flex flex-col justify-between ${
           isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >

@@ -24,7 +24,7 @@ export default function FeaturedVideos() {
   };
 
   return (
-    <section className="py-24 bg-primary-black relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-primary-black relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-islamic-pattern opacity-5 pointer-events-none" />
       

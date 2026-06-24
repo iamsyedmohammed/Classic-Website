@@ -7,7 +7,7 @@ import ContactInfoCard from '@/components/ContactInfoCard';
 
 export default function LocationContact() {
   return (
-    <section className="py-24 bg-primary-black relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-primary-black relative overflow-hidden">
       {/* Background patterns */}
       <div className="absolute inset-0 bg-islamic-pattern opacity-10 pointer-events-none" />
 
@@ -63,7 +63,7 @@ export default function LocationContact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="w-full h-[450px] rounded-3xl overflow-hidden border border-royal-gold/15 shadow-gold-glow relative bg-secondary-black"
+            className="w-full h-[280px] md:h-[450px] rounded-3xl overflow-hidden border border-royal-gold/15 shadow-gold-glow relative bg-secondary-black"
           >
             <iframe
               title="Classic Biryani Kabab & Curry Location Map"

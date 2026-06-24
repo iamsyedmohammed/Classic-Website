@@ -46,14 +46,14 @@ export default function GalleryPreview() {
 
   // Alternating tilt angles for Polaroid cards
   const rotations = [
-    'rotate-[-3deg]',
-    'rotate-[2deg]',
-    'rotate-[-1.5deg]',
-    'rotate-[3deg]',
+    'sm:rotate-[-3deg]',
+    'sm:rotate-[2deg]',
+    'sm:rotate-[-1.5deg]',
+    'sm:rotate-[3deg]',
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-b from-primary-black via-deep-maroon/20 to-primary-black relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-gradient-to-b from-primary-black via-deep-maroon/20 to-primary-black relative overflow-hidden">
       {/* Background patterns */}
       <div className="absolute inset-0 bg-islamic-pattern opacity-10 pointer-events-none" />
 
@@ -67,7 +67,7 @@ export default function GalleryPreview() {
           </span>
           
           {/* Main heading - forced to one line on larger screens */}
-          <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide text-ivory leading-tight md:whitespace-nowrap">
+          <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide text-ivory leading-tight">
             Taste the vibes through our gallery
           </h2>
           

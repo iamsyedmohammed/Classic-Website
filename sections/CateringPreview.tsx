@@ -8,7 +8,7 @@ import Image from 'next/image';
 
 export default function CateringPreview() {
   return (
-    <section className="py-24 bg-secondary-black relative overflow-hidden bg-islamic-pattern">
+    <section className="py-16 md:py-24 bg-secondary-black relative overflow-hidden bg-islamic-pattern">
       {/* Background Gold Pattern Overlay */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.05)_0%,transparent_70%)] pointer-events-none" />
 
@@ -40,7 +40,7 @@ export default function CateringPreview() {
 
           {/* Right Column - Asymmetric Collage (7 Columns) */}
           <div className="lg:col-span-7">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Left pane: Stack of 2 landscape images */}
               <div className="flex flex-col gap-4 justify-between">
                 <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-md group">

@@ -45,7 +45,7 @@ export default function Hero() {
   ];
 
   return (
-    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-primary-black py-28 lg:py-0">
+    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-primary-black py-20 lg:py-0">
       {/* Subtle background texture */}
       <div className="absolute inset-0 bg-islamic-pattern opacity-12 pointer-events-none" />
 
@@ -120,7 +120,7 @@ export default function Hero() {
             className="lg:col-span-5 relative w-full flex justify-center items-center py-8"
           >
             {/* Main Showpiece Image in circular shape without motion */}
-            <div className="relative w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[420px] md:h-[420px] shadow-gold-glow border-2 border-royal-gold/20 rounded-full overflow-hidden bg-secondary-black">
+            <div className="relative w-[240px] h-[240px] sm:w-[340px] sm:h-[340px] md:w-[420px] md:h-[420px] shadow-gold-glow border-2 border-royal-gold/20 rounded-full overflow-hidden bg-secondary-black">
               <img
                 src="/images/menu/chicken-dum-biryani-manchester-nh.webp"
                 alt="Authentic Hyderabadi Chicken Dum Biryani"

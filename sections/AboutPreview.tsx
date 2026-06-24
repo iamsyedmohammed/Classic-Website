@@ -27,7 +27,7 @@ export default function AboutPreview() {
   };
 
   return (
-    <section className="py-24 bg-secondary-black relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-secondary-black relative overflow-hidden">
       {/* Background patterns */}
       <div className="absolute inset-0 bg-islamic-pattern opacity-5 pointer-events-none" />
 
@@ -41,7 +41,7 @@ export default function AboutPreview() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative w-full max-w-[400px] aspect-[3/4] nizami-arch-frame border-2 border-royal-gold/25 shadow-gold-glow overflow-hidden bg-primary-black"
+              className="relative w-full max-w-[320px] md:max-w-[400px] aspect-[3/4] nizami-arch-frame border-2 border-royal-gold/25 shadow-gold-glow overflow-hidden bg-primary-black"
             >
               {aboutPreviewContent.image ? (
                 <Image
