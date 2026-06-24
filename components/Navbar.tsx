@@ -11,8 +11,6 @@ const navLinks = [
   { label: 'About', path: '/about' },
   { label: 'Menu', path: '/menu' },
   { label: 'Catering', path: '/catering' },
-  { label: 'Gallery', path: '/gallery' },
-  { label: 'Reviews', path: '/reviews' },
   { label: 'Contact', path: '/contact' },
 ];
 
@@ -70,15 +68,13 @@ export default function Navbar() {
                 <Link
                   key={link.path}
                   href={link.path}
-                  className={`relative font-plus-jakarta text-sm tracking-wide transition-colors duration-300 py-2 group ${
-                    isActive ? 'text-royal-gold' : 'text-ivory/80 hover:text-royal-gold'
-                  }`}
+                  className={`relative font-plus-jakarta text-sm tracking-wide transition-colors duration-300 py-2 group ${isActive ? 'text-royal-gold' : 'text-ivory/80 hover:text-royal-gold'
+                    }`}
                 >
                   {link.label}
                   <span
-                    className={`absolute bottom-0 left-0 w-full h-[1.5px] bg-royal-gold transform transition-transform duration-300 origin-left ${
-                      isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
-                    }`}
+                    className={`absolute bottom-0 left-0 w-full h-[1.5px] bg-royal-gold transform transition-transform duration-300 origin-left ${isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                      }`}
                   />
                 </Link>
               );
@@ -113,21 +109,19 @@ export default function Navbar() {
       {/* Backdrop */}
       <div
         onClick={() => setIsOpen(false)}
-        className={`fixed inset-0 z-40 bg-black/60 backdrop-blur-sm lg:hidden transition-opacity duration-300 ${
-          isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-        }`}
+        className={`fixed inset-0 z-40 bg-black/60 backdrop-blur-sm lg:hidden transition-opacity duration-300 ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+          }`}
       />
 
       {/* Slide-in panel from right */}
       <div
         style={{ backgroundColor: '#000000' }}
-        className={`fixed top-0 right-0 z-50 h-full w-[75vw] max-w-[320px] lg:hidden flex flex-col shadow-2xl transition-transform duration-300 ease-in-out ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
+        className={`fixed top-0 right-0 z-50 h-full w-[75vw] max-w-[320px] lg:hidden flex flex-col shadow-2xl transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
       >
         {/* Drawer Header */}
         <div className="flex items-center justify-between px-6 h-[90px] border-b border-royal-gold/15 shrink-0">
-          <span className="font-playfair text-royal-gold text-base font-bold tracking-widest uppercase">Menu</span>
+
           <button
             onClick={() => setIsOpen(false)}
             className="flex items-center justify-center w-9 h-9 rounded-full border border-royal-gold/30 text-royal-gold hover:bg-royal-gold/10 transition-colors duration-200"
@@ -146,11 +140,10 @@ export default function Navbar() {
                 key={link.path}
                 href={link.path}
                 onClick={() => setIsOpen(false)}
-                className={`flex items-center justify-between py-4 border-b border-white/5 font-plus-jakarta text-base font-medium tracking-wide transition-colors duration-200 ${
-                  isActive
-                    ? 'text-royal-gold'
-                    : 'text-ivory/70 hover:text-royal-gold'
-                }`}
+                className={`flex items-center justify-between py-4 border-b border-white/5 font-plus-jakarta text-base font-medium tracking-wide transition-colors duration-200 ${isActive
+                  ? 'text-royal-gold'
+                  : 'text-ivory/70 hover:text-royal-gold'
+                  }`}
                 style={{ transitionDelay: isOpen ? `${i * 40}ms` : '0ms' }}
               >
                 <span>{link.label}</span>
@@ -162,19 +155,6 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* Drawer Footer CTA */}
-        <div className="px-6 py-8 border-t border-royal-gold/15 shrink-0">
-          <a
-            href="https://ordering-platform.example.com/classic-biryani-manchester"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setIsOpen(false)}
-            className="flex items-center justify-center gap-2 w-full font-plus-jakarta text-sm font-bold uppercase tracking-wider py-4 rounded-full bg-royal-gold text-primary-black hover:bg-light-gold transition-all duration-300"
-          >
-            <span>Order Online</span>
-            <ArrowRight size={15} />
-          </a>
-        </div>
       </div>
     </>
   );
