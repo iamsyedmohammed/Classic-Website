@@ -120,7 +120,7 @@ export default function Navbar() {
           }`}
       >
         {/* Drawer Header */}
-        <div className="flex items-center justify-between px-6 h-[90px] border-b border-royal-gold/15 shrink-0">
+        <div className="flex items-center justify-end px-6 h-[90px] border-b border-royal-gold/15 shrink-0">
 
           <button
             onClick={() => setIsOpen(false)}
