@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
+import { heroContent } from '@/content/home';
 
 const navLinks = [
   { label: 'Home', path: '/' },
@@ -154,6 +155,20 @@ export default function Navbar() {
             );
           })}
         </nav>
+
+        {/* Order Online CTA */}
+        <div className="px-6 pb-8 shrink-0">
+          <a
+            href={heroContent.primaryCTA.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 w-full font-plus-jakarta text-xs font-bold uppercase tracking-wider py-4 px-6 rounded-full bg-royal-gold text-primary-black hover:bg-light-gold transition-all duration-300"
+            onClick={() => setIsOpen(false)}
+          >
+            <span>Order Online</span>
+            <ArrowRight size={14} />
+          </a>
+        </div>
 
       </div>
     </>
