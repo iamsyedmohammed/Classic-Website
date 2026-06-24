@@ -45,7 +45,7 @@ export default function Hero() {
   ];
 
   return (
-    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-primary-black py-20 lg:py-0">
+    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-primary-black pt-[70px] lg:pt-0">
       {/* Subtle background texture */}
       <div className="absolute inset-0 bg-islamic-pattern opacity-12 pointer-events-none" />
 

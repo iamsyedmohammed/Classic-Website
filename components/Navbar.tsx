@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X, ArrowRight } from 'lucide-react';
-
 import Image from 'next/image';
 
 const navLinks = [
@@ -14,38 +13,40 @@ const navLinks = [
   { label: 'Catering', path: '/catering' },
   { label: 'Gallery', path: '/gallery' },
   { label: 'Reviews', path: '/reviews' },
-  { label: 'Contact', path: '/contact' }
+  { label: 'Contact', path: '/contact' },
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
-  const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
+  // Prevent body scroll when drawer is open
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [isOpen]);
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check initially on load
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  // Close drawer on route change
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
 
   return (
     <>
+      {/* ── Top Bar ── */}
       <nav
-        className="fixed top-0 left-0 right-0 z-50 h-[80px] lg:h-[120px] flex items-center bg-primary-black border-b border-royal-gold/10"
+        style={{ backgroundColor: '#000000' }}
+        className="fixed top-0 left-0 right-0 z-50 h-[70px] lg:h-[100px] flex items-center border-b border-white/5"
       >
-        <div className="w-full max-w-7xl mx-auto px-6 md:px-8 flex justify-between items-center">
-          {/* Logo / Brand Name */}
-          <Link href="/" className="flex items-center select-none">
-            <div className="relative w-20 h-20 sm:w-28 sm:h-28">
+        <div className="w-full max-w-7xl mx-auto px-5 md:px-8 flex justify-between items-center">
+
+          {/* Logo */}
+          <Link href="/" className="flex items-center select-none shrink-0" onClick={() => setIsOpen(false)}>
+            <div className="relative w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24">
               <Image
                 src="/images/logo.png"
                 alt="Classic Biryani Logo"
@@ -64,15 +65,14 @@ export default function Navbar() {
                 <Link
                   key={link.path}
                   href={link.path}
-                  className={`relative font-plus-jakarta text-sm tracking-wide transition-colors duration-300 py-2 ${
+                  className={`relative font-plus-jakarta text-sm tracking-wide transition-colors duration-300 py-2 group ${
                     isActive ? 'text-royal-gold' : 'text-ivory/80 hover:text-royal-gold'
-                  } group`}
+                  }`}
                 >
                   {link.label}
-                  {/* Underline Animation */}
                   <span
-                    className={`absolute bottom-0 left-0 w-full h-[1.5px] bg-royal-gold transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100 ${
-                      isActive ? 'scale-x-100' : ''
+                    className={`absolute bottom-0 left-0 w-full h-[1.5px] bg-royal-gold transform transition-transform duration-300 origin-left ${
+                      isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
                     }`}
                   />
                 </Link>
@@ -93,52 +93,81 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Hamburger */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden text-royal-gold p-2 outline-none"
-            aria-label="Toggle menu"
+            className="lg:hidden flex items-center justify-center w-10 h-10 rounded-full border border-royal-gold/30 text-royal-gold hover:bg-royal-gold/10 transition-colors duration-200"
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
           >
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
+            {isOpen ? <X size={20} strokeWidth={2.5} /> : <Menu size={20} strokeWidth={2.5} />}
           </button>
         </div>
       </nav>
 
-      {/* Mobile Drawer Menu */}
+      {/* ── Mobile Drawer ── */}
+      {/* Backdrop */}
       <div
-        className={`fixed inset-0 z-40 bg-primary-black/98 lg:hidden pt-[80px] transition-all duration-300 flex flex-col justify-between ${
+        onClick={() => setIsOpen(false)}
+        className={`fixed inset-0 z-40 bg-black/60 backdrop-blur-sm lg:hidden transition-opacity duration-300 ${
           isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
+      />
+
+      {/* Slide-in panel from right */}
+      <div
+        style={{ backgroundColor: '#000000' }}
+        className={`fixed top-0 right-0 z-50 h-full w-[75vw] max-w-[320px] lg:hidden flex flex-col shadow-2xl transition-transform duration-300 ease-in-out ${
+          isOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
       >
-        <div className="flex flex-col gap-6 items-center px-6 py-12">
-          {navLinks.map((link) => {
+        {/* Drawer Header */}
+        <div className="flex items-center justify-between px-6 h-[70px] border-b border-royal-gold/15 shrink-0">
+          <span className="font-playfair text-royal-gold text-base font-bold tracking-widest uppercase">Menu</span>
+          <button
+            onClick={() => setIsOpen(false)}
+            className="flex items-center justify-center w-9 h-9 rounded-full border border-royal-gold/30 text-royal-gold hover:bg-royal-gold/10 transition-colors duration-200"
+            aria-label="Close menu"
+          >
+            <X size={18} strokeWidth={2.5} />
+          </button>
+        </div>
+
+        {/* Nav Links */}
+        <nav className="flex-1 overflow-y-auto px-6 py-8 flex flex-col gap-1">
+          {navLinks.map((link, i) => {
             const isActive = pathname === link.path;
             return (
               <Link
                 key={link.path}
                 href={link.path}
                 onClick={() => setIsOpen(false)}
-                className={`font-playfair text-xl tracking-widest transition-colors duration-300 ${
-                  isActive ? 'text-royal-gold font-bold' : 'text-ivory/80 hover:text-royal-gold'
+                className={`flex items-center justify-between py-4 border-b border-white/5 font-plus-jakarta text-base font-medium tracking-wide transition-colors duration-200 ${
+                  isActive
+                    ? 'text-royal-gold'
+                    : 'text-ivory/70 hover:text-royal-gold'
                 }`}
+                style={{ transitionDelay: isOpen ? `${i * 40}ms` : '0ms' }}
               >
-                {link.label}
+                <span>{link.label}</span>
+                {isActive && (
+                  <span className="w-1.5 h-1.5 rounded-full bg-royal-gold" />
+                )}
               </Link>
             );
           })}
-        </div>
+        </nav>
 
-        {/* Mobile CTA */}
-        <div className="px-6 py-12 flex flex-col items-center border-t border-royal-gold/10">
+        {/* Drawer Footer CTA */}
+        <div className="px-6 py-8 border-t border-royal-gold/15 shrink-0">
           <a
             href="https://ordering-platform.example.com/classic-biryani-manchester"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setIsOpen(false)}
-            className="w-full text-center inline-flex items-center justify-center gap-2 font-plus-jakarta text-sm font-semibold uppercase tracking-wider py-4 rounded-full bg-royal-gold text-primary-black hover:bg-light-gold transition-all duration-300"
+            className="flex items-center justify-center gap-2 w-full font-plus-jakarta text-sm font-bold uppercase tracking-wider py-4 rounded-full bg-royal-gold text-primary-black hover:bg-light-gold transition-all duration-300"
           >
             <span>Order Online</span>
-            <ArrowRight size={16} />
+            <ArrowRight size={15} />
           </a>
         </div>
       </div>
