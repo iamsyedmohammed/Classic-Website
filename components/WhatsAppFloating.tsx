@@ -9,7 +9,7 @@ export default function WhatsAppFloating() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Contact us on WhatsApp"
-      className="fixed bottom-6 right-6 z-50 p-4 rounded-full bg-secondary-black border border-royal-gold/45 text-royal-gold shadow-gold-glow hover:bg-royal-gold hover:text-primary-black transition-all duration-300 hover:scale-110 flex items-center justify-center cursor-pointer group"
+      className="whatsapp-float fixed bottom-6 right-6 z-50 p-4 rounded-full bg-secondary-black border border-royal-gold/45 text-royal-gold shadow-gold-glow hover:bg-royal-gold hover:text-primary-black transition-all duration-300 hover:scale-110 flex items-center justify-center cursor-pointer group"
     >
       <svg
         className="w-6 h-6 fill-current"

@@ -45,7 +45,7 @@ export default function Hero() {
   ];
 
   return (
-    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-primary-black pt-[70px] lg:pt-0">
+    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-primary-black pt-[90px] lg:pt-0">
       {/* Subtle background texture */}
       <div className="absolute inset-0 bg-islamic-pattern opacity-12 pointer-events-none" />
 
@@ -88,16 +88,16 @@ export default function Hero() {
               {heroContent.subtitle}
             </motion.p>
 
-            {/* Action buttons side-by-side */}
+            {/* Action buttons - stacked on mobile, side-by-side on sm+ */}
             <motion.div
               variants={fadeUp}
-              className="flex flex-row gap-4 items-center w-full sm:w-auto"
+              className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center w-full sm:w-auto"
             >
               <a
                 href={heroContent.primaryCTA.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 font-plus-jakarta text-xs font-bold uppercase tracking-wider py-4 px-8 rounded-full bg-royal-gold text-primary-black hover:bg-light-gold hover:scale-[1.03] transition-all duration-300 shadow-gold-glow cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 font-plus-jakarta text-xs font-bold uppercase tracking-wider py-4 px-8 rounded-full bg-royal-gold text-primary-black hover:bg-light-gold hover:scale-[1.03] transition-all duration-300 shadow-gold-glow cursor-pointer whitespace-nowrap"
               >
                 <span>{heroContent.primaryCTA.text}</span>
                 <ArrowRight size={14} />
@@ -105,19 +105,19 @@ export default function Hero() {
 
               <Link
                 href={heroContent.secondaryCTA.link}
-                className="btn-royal-slide hover:scale-[1.03] transition-transform duration-300 text-center"
+                className="btn-royal-slide hover:scale-[1.03] transition-transform duration-300 text-center whitespace-nowrap"
               >
                 {heroContent.secondaryCTA.text}
               </Link>
             </motion.div>
           </motion.div>
 
-          {/* Right Column: Visual showpiece elements copying DelishDrop's wavy layout */}
+          {/* Right Column: hidden on mobile, shown on lg+ */}
           <motion.div
             initial="hidden"
             animate="visible"
             variants={imageVariants}
-            className="lg:col-span-5 relative w-full flex justify-center items-center py-8"
+            className="lg:col-span-5 relative w-full hidden lg:flex justify-center items-center py-8"
           >
             {/* Main Showpiece Image in circular shape without motion */}
             <div className="relative w-[240px] h-[240px] sm:w-[340px] sm:h-[340px] md:w-[420px] md:h-[420px] shadow-gold-glow border-2 border-royal-gold/20 rounded-full overflow-hidden bg-secondary-black">

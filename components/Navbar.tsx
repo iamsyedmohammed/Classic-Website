@@ -20,14 +20,19 @@ export default function Navbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
-  // Prevent body scroll when drawer is open
+  // Prevent body scroll and mark nav open when drawer is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
+      document.body.classList.add('nav-open');
     } else {
       document.body.style.overflow = '';
+      document.body.classList.remove('nav-open');
     }
-    return () => { document.body.style.overflow = ''; };
+    return () => {
+      document.body.style.overflow = '';
+      document.body.classList.remove('nav-open');
+    };
   }, [isOpen]);
 
   // Close drawer on route change
@@ -40,7 +45,7 @@ export default function Navbar() {
       {/* ── Top Bar ── */}
       <nav
         style={{ backgroundColor: '#000000' }}
-        className="fixed top-0 left-0 right-0 z-50 h-[70px] lg:h-[100px] flex items-center border-b border-white/5"
+        className="fixed top-0 left-0 right-0 z-50 h-[90px] lg:h-[100px] flex items-center border-b border-white/5"
       >
         <div className="w-full max-w-7xl mx-auto px-5 md:px-8 flex justify-between items-center">
 
@@ -121,7 +126,7 @@ export default function Navbar() {
         }`}
       >
         {/* Drawer Header */}
-        <div className="flex items-center justify-between px-6 h-[70px] border-b border-royal-gold/15 shrink-0">
+        <div className="flex items-center justify-between px-6 h-[90px] border-b border-royal-gold/15 shrink-0">
           <span className="font-playfair text-royal-gold text-base font-bold tracking-widest uppercase">Menu</span>
           <button
             onClick={() => setIsOpen(false)}

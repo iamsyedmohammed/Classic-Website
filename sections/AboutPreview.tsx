@@ -34,8 +34,8 @@ export default function AboutPreview() {
       <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Left Column: Image with Arch Frame */}
-          <div className="lg:col-span-5 flex justify-center order-2 lg:order-1">
+          {/* Left Column: Image — hidden on mobile, shown on lg+ */}
+          <div className="lg:col-span-5 hidden lg:flex justify-center order-2 lg:order-1">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -63,7 +63,7 @@ export default function AboutPreview() {
           </div>
 
           {/* Right Column: Copywriting content */}
-          <div className="lg:col-span-7 order-1 lg:order-2">
+          <div className="lg:col-span-7 col-span-12 order-1 lg:order-2">
             <motion.div
               variants={containerVariants}
               initial="hidden"
