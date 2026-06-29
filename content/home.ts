@@ -2,10 +2,10 @@ import { WhyChooseUsItem, FeaturedVideo } from '@/types';
 
 export const heroContent = {
   title: 'Experience the Royal Taste of Hyderabad',
-  subtitle: 'Authentic Dum Biryanis, Flavorful Kababs, Rich Curries and Exceptional Catering Crafted with Passion.',
+  subtitle: 'Experience the Royal Taste of Hyderabad with authentic Hyderabadi Dum Biryani, flavorful Indian Kababs, rich curries, and 100% Halal Indian cuisine in Manchester, NH.',
   primaryCTA: {
     text: 'Order Online',
-    link: 'https://ordering-platform.example.com/classic-biryani-manchester' // Placeholder URL for external orders
+    link: 'https://ordering-platform.example.com/classic-biryani-manchester'
   },
   secondaryCTA: {
     text: 'Explore Menu',
@@ -15,9 +15,9 @@ export const heroContent = {
 };
 
 export const aboutPreviewContent = {
-  title: 'A Tradition of Flavor, Crafted with Passion',
+  title: 'Authentic Hyderabadi Cuisine | Classic Biryani Manchester NH',
   subtitle: 'The Royal Taste of Hyderabad',
-  description: 'Classic Biryani Kabab & Curry brings the authentic flavors of Hyderabad to Manchester, New Hampshire. Inspired by generations of culinary tradition, we serve aromatic dum biryanis, succulent kababs, rich curries, and unforgettable catering experiences.',
+  description: 'Classic Biryani Kabab & Curry brings the authentic flavors of Hyderabad to Manchester, New Hampshire. Inspired by generations of culinary tradition, we prepare every meal with traditional Dum cooking methods. As a family-friendly Indian restaurant on South Main Street Manchester, we are dedicated to serving Halal Indian food crafted from fresh ground spices, premium ingredients, and genuine hospitality.',
   features: [
     { title: 'Authentic Hyderabadi Heritage', desc: 'Crafted following original Nizami royal recipes.' },
     { title: 'Passion for Quality', desc: 'Hand-selected spices ground daily for unmatched freshness.' },

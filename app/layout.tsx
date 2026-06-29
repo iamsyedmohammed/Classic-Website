@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Lora, Poppins } from "next/font/google";
 import "./globals.css";
 import JsonLd from "@/components/JsonLd";
@@ -17,24 +17,47 @@ const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#0F0F0F",
+};
+
 export const metadata: Metadata = {
-  title: "Classic Biryani Kabab & Curry | Best Indian Restaurant in Manchester NH",
-  description: "Experience authentic Hyderabadi biryanis, kababs, curries and catering services at Classic Biryani Kabab & Curry in Manchester, NH. Dine-in, takeout and delivery available.",
-  metadataBase: new URL("https://classicbiryaninh.com"),
-  alternates: {
-    canonical: "/",
+  title: {
+    default: "The Classic Biryani | Authentic Hyderabadi Restaurant in Manchester, NH",
+    template: "%s | The Classic Biryani"
   },
+  description:
+    "Experience authentic Hyderabadi Dum Biryani, Hand Zabiha Halal kababs, curries, and catering at The Classic Biryani in Manchester, NH. Dine-in, takeout, delivery, and catering available 7 days a week.",
+  metadataBase: new URL("https://theclassicbiryani.com"),
+  alternates: { canonical: "/" },
+  keywords: [
+    "Classic Biryani Manchester NH",
+    "The Classic Biryani",
+    "Indian Restaurant Manchester NH",
+    "Halal Restaurant Manchester NH",
+    "Hyderabadi Dum Biryani Manchester",
+    "Best Biryani New Hampshire",
+    "Indian Food Manchester NH",
+    "Hand Zabiha Halal Restaurant NH",
+    "Indian Catering Manchester NH",
+    "Lunch Buffet Manchester NH",
+    "Takeout Delivery Manchester NH"
+  ],
   openGraph: {
-    title: "Classic Biryani Kabab & Curry | Best Indian Restaurant in Manchester NH",
-    description: "Experience authentic Hyderabadi biryanis, kababs, curries and catering services at Classic Biryani Kabab & Curry in Manchester, NH.",
-    url: "https://classicbiryaninh.com",
-    siteName: "Classic Biryani Kabab & Curry",
+    title: "The Classic Biryani | Authentic Hyderabadi Restaurant in Manchester, NH",
+    description:
+      "Experience authentic Hyderabadi Dum Biryani, Hand Zabiha Halal kababs, curries, and premium catering at The Classic Biryani in Manchester, NH.",
+    url: "https://theclassicbiryani.com",
+    siteName: "The Classic Biryani",
     images: [
       {
         url: "/images/og-image.webp",
         width: 1200,
         height: 630,
-        alt: "Classic Biryani Kabab & Curry - The Royal Taste of Hyderabad",
+        alt: "The Classic Biryani - Authentic Hyderabadi Restaurant Manchester NH",
       },
     ],
     locale: "en_US",
@@ -42,9 +65,15 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Classic Biryani Kabab & Curry | Best Indian Restaurant in Manchester NH",
-    description: "Experience authentic Hyderabadi biryanis, kababs, curries and catering services at Classic Biryani Kabab & Curry in Manchester, NH.",
+    title: "The Classic Biryani | Authentic Hyderabadi Restaurant in Manchester, NH",
+    description:
+      "Experience authentic Hyderabadi Dum Biryani, Hand Zabiha Halal kababs, curries, and premium catering at The Classic Biryani in Manchester, NH.",
     images: ["/images/og-image.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
   },
 };
 

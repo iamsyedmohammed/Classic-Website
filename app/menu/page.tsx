@@ -55,15 +55,15 @@ export default function MenuPage() {
       <Navbar />
       
       {/* Spacer to push content below sticky navbar */}
-      <div className="h-[120px] bg-primary-black" />
+      <div className="h-[90px] lg:h-[100px] bg-primary-black" />
 
       <main className="flex-1 bg-primary-black min-h-screen">
         {/* Banner Section */}
-        <section className="relative py-16 bg-secondary-black overflow-hidden bg-islamic-pattern">
+        <section className="relative py-12 md:py-16 bg-secondary-black overflow-hidden bg-islamic-pattern">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.03)_0%,transparent_80%)] pointer-events-none" />
           <div className="max-w-7xl mx-auto px-6 md:px-8 text-center relative z-10">
             <span className="font-cormorant text-lg italic text-royal-gold uppercase tracking-widest block mb-2">Taste of Royalty</span>
-            <h1 className="font-playfair text-4xl md:text-5xl font-bold tracking-wide text-ivory">
+            <h1 className="font-playfair text-3xl sm:text-4xl md:text-5xl font-bold tracking-wide text-ivory">
               The Royal Menu
             </h1>
             <p className="font-plus-jakarta text-xs text-ivory/60 mt-3 max-w-lg mx-auto">
@@ -90,8 +90,8 @@ export default function MenuPage() {
             </div>
 
             {/* Diet Filters */}
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="font-plus-jakarta text-xs font-semibold uppercase tracking-wider text-ivory/60 mr-2">Filter:</span>
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+              <span className="font-plus-jakarta text-xs font-semibold uppercase tracking-wider text-ivory/60 mr-1">Filter:</span>
               <button
                 onClick={() => setDietFilter('all')}
                 className={`px-4 py-2 rounded-full font-plus-jakarta text-xs font-medium uppercase tracking-wider transition-all duration-300 ${

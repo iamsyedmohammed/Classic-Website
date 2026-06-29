@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/'],
     },
-    sitemap: 'https://classicbiryaninh.com/sitemap.xml',
+    sitemap: 'https://theclassicbiryani.com/sitemap.xml',
   };
 }

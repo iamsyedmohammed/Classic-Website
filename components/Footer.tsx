@@ -8,8 +8,8 @@ import { Phone, MapPin, Clock } from 'lucide-react';
 export default function Footer() {
   return (
     <footer className="relative bg-primary-black border-t border-royal-gold/15 pt-16 pb-8 overflow-hidden bg-islamic-pattern">
-      <div className="max-w-[90rem] mx-auto px-8 md:px-16 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+      <div className="max-w-[90rem] mx-auto px-5 sm:px-8 md:px-12 lg:px-16 relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-16">
 
           {/* Brand Info */}
           <div className="flex flex-col gap-4">
@@ -24,8 +24,8 @@ export default function Footer() {
                 />
               </div>
             </Link> */}
-            <p className="font-plus-jakarta text-base text-zinc-300 leading-relaxed mt-2">
-              Bringing the authentic flavor of Hyderabadi Nizami heritage to Manchester, New Hampshire. Prepared with care, passion, and 100% Halal ingredients.
+            <p className="font-plus-jakarta text-base text-zinc-300 leading-relaxed mt-2 select-text">
+              Classic Biryani Kabab & Curry proudly serves authentic Hyderabadi Dum Biryani, Indian curries, kababs, 100% Halal cuisine, Indian lunch buffet, and professional catering services in Manchester, New Hampshire. Visit us for dine-in, takeout, delivery, and catering.
             </p>
             {/* Social Links */}
             <div className="flex gap-4 mt-2">
@@ -93,15 +93,15 @@ export default function Footer() {
               <span>Hours</span>
             </h3>
             <ul className="flex flex-col gap-3 font-plus-jakarta text-base text-zinc-300">
-              <li className="flex justify-between border-b border-royal-gold/10 pb-2">
+              <li className="flex flex-wrap justify-between gap-x-4 border-b border-royal-gold/10 pb-2">
                 <span>Mon - Thu</span>
                 <span className="text-zinc-100">11:00 AM - 10:00 PM</span>
               </li>
-              <li className="flex justify-between border-b border-royal-gold/10 pb-2">
+              <li className="flex flex-wrap justify-between gap-x-4 border-b border-royal-gold/10 pb-2">
                 <span>Fri - Sat</span>
                 <span className="text-zinc-100 font-semibold text-royal-gold">11:00 AM - 11:00 PM</span>
               </li>
-              <li className="flex justify-between border-b border-royal-gold/10 pb-2">
+              <li className="flex flex-wrap justify-between gap-x-4 border-b border-royal-gold/10 pb-2">
                 <span>Sunday</span>
                 <span className="text-zinc-100">12:00 PM - 9:30 PM</span>
               </li>
@@ -154,8 +154,8 @@ export default function Footer() {
         </div>
 
         {/* Charminar SVG line art and Copyright */}
-        <div className="border-t border-royal-gold/15 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="font-plus-jakarta text-sm text-zinc-400">
+        <div className="border-t border-royal-gold/15 pt-8 flex flex-col items-center gap-4 md:flex-row md:justify-between">
+          <p className="font-plus-jakarta text-sm text-zinc-400 text-center md:text-left">
             &copy; {new Date().getFullYear()} Classic Biryani Kabab & Curry. All Rights Reserved. | <Link href="/privacy" className="hover:text-royal-gold">Privacy</Link> | <Link href="/terms" className="hover:text-royal-gold">Terms</Link>
           </p>
 

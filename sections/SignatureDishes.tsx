@@ -10,7 +10,7 @@ import { ArrowRight } from 'lucide-react';
 
 export default function SignatureDishes() {
   // Select specific signature dishes or filter by popular
-  const signatureDishes = menuItems.filter(item => item.popular).slice(0, 6);
+  const signatureDishes = menuItems.filter(item => item.popular);
 
   const containerVariants = {
     hidden: { opacity: 0 },

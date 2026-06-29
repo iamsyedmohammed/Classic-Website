@@ -48,22 +48,19 @@ export default function TestimonialsSection() {
               variants={cardVariants}
               className="bg-secondary-black/40 backdrop-blur-md border border-royal-gold/15 p-8 rounded-3xl shadow-gold-glow flex flex-col justify-between hover:border-royal-gold/35 hover:scale-[1.02] transition-all duration-300 relative group"
             >
-              {/* Background Quote Icon */}
-              <div className="absolute top-6 right-6 text-royal-gold/10 group-hover:text-royal-gold/20 transition-colors duration-300 pointer-events-none">
-                <Quote size={40} className="fill-current" />
-              </div>
-
               <div className="flex-1 flex flex-col">
                 {/* Stars */}
                 <div className="flex gap-1 text-royal-gold mb-6">
                   {Array.from({ length: item.rating }).map((_, idx) => (
-                    <Star key={idx} size={18} fill="currentColor" className="stroke-[1.5]" />
+                    <Star key={idx} size={24} fill="currentColor" className="stroke-[1.5]" />
                   ))}
                 </div>
 
                 {/* Review text */}
-                <p className="font-cormorant text-lg md:text-xl italic text-ivory/90 leading-relaxed mb-8 select-text flex-1">
-                  &ldquo;{item.review}&rdquo;
+                <p className="font-cormorant text-base md:text-lg italic text-ivory/90 leading-relaxed mb-8 select-text flex-1">
+                  <Quote size={15} className="inline-block fill-current align-top mr-2 text-royal-gold/60 transform rotate-180" />
+                  {item.review}
+                  <Quote size={15} className="inline-block fill-current align-bottom ml-2 text-royal-gold/60" />
                 </p>
               </div>
 

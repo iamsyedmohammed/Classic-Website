@@ -24,8 +24,12 @@ export default function CateringPreview() {
             </div>
             
             <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-ivory leading-tight">
-              Celebrate your moments! Royal catering setups designed for your special occasions
+              Celebrate Life&apos;s Special Moments with Royal Catering
             </h2>
+            
+            <p className="font-plus-jakarta text-zinc-300 text-sm md:text-base leading-relaxed select-text">
+              We provide professional <strong>Indian catering in Manchester, NH</strong> and surrounding southern New Hampshire regions. Whether you need <strong>wedding catering</strong>, <strong>corporate catering</strong>, <strong>birthday catering</strong>, or <strong>Halal catering</strong>, we craft bespoke menus with authentic <strong>Hyderabadi catering</strong> packages and presentation setups.
+            </p>
             
             <div className="pt-2">
               <Link
@@ -38,43 +42,27 @@ export default function CateringPreview() {
             </div>
           </div>
 
-          {/* Right Column - Asymmetric Collage (7 Columns) */}
+          {/* Right Column - Catering Images (7 Columns) */}
           <div className="lg:col-span-7">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {/* Left pane: Stack of 2 landscape images */}
-              <div className="flex flex-col gap-4 justify-between">
-                <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-md group">
-                  <Image
-                    src="/images/catering/wedding-catering-manchester-nh.png"
-                    alt="Wedding Catering Setup"
-                    fill
-                    sizes="(max-width: 1024px) 50vw, 25vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    unoptimized
-                  />
-                  <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-300" />
-                </div>
-                
-                <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-md group">
-                  <Image
-                    src="/images/catering/corporate-catering-manchester-nh.png"
-                    alt="Corporate Catering Banquet"
-                    fill
-                    sizes="(max-width: 1024px) 50vw, 25vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    unoptimized
-                  />
-                  <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-300" />
-                </div>
-              </div>
-
-              {/* Right pane: 1 tall portrait image */}
-              <div className="relative rounded-3xl overflow-hidden shadow-md group aspect-[3/4] md:aspect-auto md:h-full min-h-[300px]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-md group">
                 <Image
-                  src="/images/catering/birthday-catering-manchester-nh.webp"
-                  alt="Royal Dining & Buffet Setup"
+                  src="/images/catering/wedding-catering-manchester-nh.png"
+                  alt="Wedding Catering Setup"
                   fill
-                  sizes="(max-width: 1024px) 50vw, 35vw"
+                  sizes="(max-width: 1024px) 100vw, 35vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  unoptimized
+                />
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-300" />
+              </div>
+              
+              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-md group">
+                <Image
+                  src="/images/catering/corporate-catering-manchester-nh.png"
+                  alt="Corporate Catering Banquet"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 35vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                   unoptimized
                 />

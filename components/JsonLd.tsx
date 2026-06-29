@@ -2,17 +2,24 @@ import React from 'react';
 import { testimonials } from '@/content/testimonials';
 import { cateringFAQs } from '@/content/catering';
 
+const SITE_URL = 'https://theclassicbiryani.com';
+const FACEBOOK_URL = 'https://www.facebook.com/Classicbkc/';
+const INSTAGRAM_URL = 'https://www.instagram.com/classicbkc/';
+const RESTAURANT_NAME = 'Classic Biryani Kabab & Curry';
+
 export default function JsonLd() {
   const restaurantSchema = {
     '@context': 'https://schema.org',
     '@type': ['Restaurant', 'LocalBusiness'],
-    '@id': 'https://classicbiryaninh.com/#restaurant',
-    'name': 'Classic Biryani Kabab & Curry',
-    'image': 'https://classicbiryaninh.com/images/og-image.webp',
+    '@id': `${SITE_URL}/#restaurant`,
+    'name': RESTAURANT_NAME,
+    'alternateName': 'The Classic Biryani',
+    'image': `${SITE_URL}/images/og-image.webp`,
+    'logo': `${SITE_URL}/images/logo.png`,
     'priceRange': '$$',
     'telephone': '(603) 555-0199',
-    'url': 'https://classicbiryaninh.com',
-    'hasMenu': 'https://classicbiryaninh.com/menu',
+    'url': SITE_URL,
+    'hasMenu': `${SITE_URL}/menu`,
     'servesCuisine': ['Indian', 'Hyderabadi', 'Pakistani', 'Halal'],
     'address': {
       '@type': 'PostalAddress',
@@ -47,23 +54,18 @@ export default function JsonLd() {
         'closes': '21:30'
       }
     ],
-    'sameAs': [
-      'https://www.facebook.com/Classicbkc/',
-      'https://www.instagram.com/classicbkc/'
-    ]
+    'sameAs': [FACEBOOK_URL, INSTAGRAM_URL]
   };
 
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    '@id': 'https://classicbiryaninh.com/#organization',
-    'name': 'Classic Biryani Kabab & Curry',
-    'url': 'https://classicbiryaninh.com',
-    'logo': 'https://classicbiryaninh.com/images/logo.png',
-    'sameAs': [
-      'https://www.facebook.com/Classicbkc/',
-      'https://www.instagram.com/classicbkc/'
-    ]
+    '@id': `${SITE_URL}/#organization`,
+    'name': RESTAURANT_NAME,
+    'alternateName': 'The Classic Biryani',
+    'url': SITE_URL,
+    'logo': `${SITE_URL}/images/logo.png`,
+    'sameAs': [FACEBOOK_URL, INSTAGRAM_URL]
   };
 
   const faqSchema = {
@@ -114,19 +116,19 @@ export default function JsonLd() {
         '@type': 'ListItem',
         'position': 1,
         'name': 'Home',
-        'item': 'https://classicbiryaninh.com'
+        'item': SITE_URL
       },
       {
         '@type': 'ListItem',
         'position': 2,
         'name': 'Menu',
-        'item': 'https://classicbiryaninh.com/menu'
+        'item': `${SITE_URL}/menu`
       },
       {
         '@type': 'ListItem',
         'position': 3,
         'name': 'Catering',
-        'item': 'https://classicbiryaninh.com/catering'
+        'item': `${SITE_URL}/catering`
       }
     ]
   };

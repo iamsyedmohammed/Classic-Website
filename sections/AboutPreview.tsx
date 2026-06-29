@@ -63,7 +63,7 @@ export default function AboutPreview() {
           </div>
 
           {/* Right Column: Copywriting content */}
-          <div className="lg:col-span-7 col-span-12 order-1 lg:order-2">
+          <div className="lg:col-span-7 order-1 lg:order-2">
             <motion.div
               variants={containerVariants}
               initial="hidden"

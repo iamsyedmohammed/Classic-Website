@@ -14,14 +14,14 @@ export default function ContactInfoCard({ iconName, title, description, href }: 
   const IconComponent = (Icons as any)[iconName] || Icons.HelpCircle;
 
   const cardContent = (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col items-center text-center gap-4">
       {/* Icon Wrapper */}
       <div className="w-12 h-12 rounded-full border border-royal-gold/20 bg-primary-black text-royal-gold flex items-center justify-center shrink-0">
         <IconComponent className="w-6 h-6 stroke-[1.5]" />
       </div>
 
       {/* Text Content */}
-      <div>
+      <div className="flex flex-col items-center w-full">
         {title && (
           <h3 className="font-playfair text-lg font-bold tracking-wide text-royal-gold mb-1">
             {title}

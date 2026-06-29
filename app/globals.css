@@ -39,7 +39,13 @@
 }
 
 html {
-  font-size: 17px;
+  font-size: 16px;
+}
+
+@media (min-width: 640px) {
+  html {
+    font-size: 17px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -238,4 +244,33 @@ textarea {
     transform: scale(0.8);
     transition: opacity 0.2s ease, transform 0.2s ease;
   }
+}
+
+/* ── Mobile-First Fixes ── */
+
+/* Prevent iOS from zooming on input focus (needs font-size >= 16px on inputs) */
+input,
+select,
+textarea {
+  font-size: 16px !important;
+}
+
+/* Remove default tap highlight color on mobile */
+a,
+button,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Prevent horizontal overflow on all screens */
+* {
+  box-sizing: border-box;
+}
+
+/* Smooth scrolling on iOS */
+html {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
 }

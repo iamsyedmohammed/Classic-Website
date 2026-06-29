@@ -45,7 +45,7 @@ export default function Hero() {
   ];
 
   return (
-    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-primary-black pt-[90px] lg:pt-[100px]">
+    <section className="relative min-h-[auto] lg:min-h-screen w-full flex items-start lg:items-center justify-center overflow-hidden bg-primary-black pt-[130px] sm:pt-[150px] lg:pt-[100px] pb-8 lg:pb-0">
       {/* Subtle background texture */}
       <div className="absolute inset-0 bg-islamic-pattern opacity-12 pointer-events-none" />
 
@@ -63,14 +63,6 @@ export default function Hero() {
             animate="visible"
             className="lg:col-span-7 flex flex-col items-start text-left"
           >
-            {/* Tagline */}
-            <motion.span
-              variants={fadeUp}
-              className="font-cormorant text-lg md:text-xl text-royal-gold tracking-widest uppercase mb-4"
-            >
-              {/* The Royal Taste of Hyderabad */}
-            </motion.span>
-
             {/* Main Title with Hyderabad Highlighted */}
             <motion.h1
               variants={fadeUp}
@@ -164,7 +156,7 @@ export default function Hero() {
                 ))}
               </div>
               <div>
-                <p className="font-plus-jakarta text-xs font-bold text-ivory">1,500+ Happy Guests</p>
+                <p className="font-plus-jakarta text-xs font-bold text-ivory">700+ Happy Guests</p>
                 <div className="flex items-center gap-1 mt-0.5">
                   <Star size={10} fill="currentColor" className="text-royal-gold stroke-none" />
                   <span className="font-plus-jakarta text-[10px] text-zinc-400 font-semibold">4.9 Star Rating</span>
