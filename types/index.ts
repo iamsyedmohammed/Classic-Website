@@ -4,7 +4,32 @@ export interface MenuItem {
   description: string;
   price: number;
   image: string;
-  category: 'biryanis' | 'appetizers' | 'kababs' | 'curries' | 'indo-chinese' | 'desserts';
+  category:
+    | 'chef-specials'
+    | 'best-sellers'
+    | 'chaat'
+    | 'pakora'
+    | 'soups'
+    | 'salads'
+    | 'tandoori-kebabs-grill'
+    | 'vegetarian-appetizers'
+    | 'non-veg-appetizers'
+    | 'goat-appetizers'
+    | 'lamb-appetizers'
+    | 'beef-appetizers'
+    | 'fish-appetizers'
+    | 'shrimp-appetizers'
+    | 'vegetarian-main-course'
+    | 'chicken-main-course'
+    | 'mutton-main-course'
+    | 'fish-main-course'
+    | 'shrimp-main-course'
+    | 'beef-main-course'
+    | 'hyderabad-dum-biryani'
+    | 'naans-breads-roti'
+    | 'extras-sides'
+    | 'beverages'
+    | 'desserts';
   spiceLevel?: 'mild' | 'medium' | 'hot' | 'none';
   popular: boolean;
   vegetarian: boolean;

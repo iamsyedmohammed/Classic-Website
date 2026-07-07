@@ -9,8 +9,8 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
 export default function SignatureDishes() {
-  // Select specific signature dishes or filter by popular
-  const signatureDishes = menuItems.filter(item => item.popular);
+  // Select chef specials for signature dishes section
+  const signatureDishes = menuItems.filter(item => item.category === 'chef-specials');
 
   const containerVariants = {
     hidden: { opacity: 0 },

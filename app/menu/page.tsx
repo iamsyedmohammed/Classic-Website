@@ -1,54 +1,166 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useRef, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import SectionHeading from '@/components/SectionHeading';
 import DishCard from '@/components/DishCard';
 import { menuItems } from '@/content/menu';
-import { Search, Info } from 'lucide-react';
+import { Search, Info, ChevronDown, Check } from 'lucide-react';
 
-const categories = [
-  { label: 'All Dishes', value: 'all' },
-  { label: 'Biryanis', value: 'biryanis' },
-  { label: 'Appetizers', value: 'appetizers' },
-  { label: 'Kababs', value: 'kababs' },
-  { label: 'Curries', value: 'curries' },
-  { label: 'Indo-Chinese', value: 'indo-chinese' },
-  { label: 'Desserts', value: 'desserts' }
+interface DropdownOption {
+  label: string;
+  type: 'parent' | 'child';
+  value: string;
+  isHeader?: boolean;
+  indent?: boolean;
+}
+
+const dropdownOptions: DropdownOption[] = [
+  { label: 'All Categories', type: 'parent', value: 'all' },
+  
+  { label: 'Specials & Favorites', type: 'parent', value: 'specials', isHeader: true },
+  { label: 'Chef Specials', type: 'child', value: 'chef-specials', indent: true },
+  { label: 'Best Sellers', type: 'child', value: 'best-sellers', indent: true },
+  
+  { label: 'Starters & Soups', type: 'parent', value: 'starters', isHeader: true },
+  { label: 'Chaat', type: 'child', value: 'chaat', indent: true },
+  { label: 'Pakora', type: 'child', value: 'pakora', indent: true },
+  { label: 'Soups', type: 'child', value: 'soups', indent: true },
+  { label: 'Salads', type: 'child', value: 'salads', indent: true },
+  { label: 'Tandoori Kebabs & Grill', type: 'child', value: 'tandoori-kebabs-grill', indent: true },
+  { label: 'Vegetarian Appetizers', type: 'child', value: 'vegetarian-appetizers', indent: true },
+  { label: 'Non-Veg Appetizers', type: 'child', value: 'non-veg-appetizers', indent: true },
+  { label: 'Goat Appetizers', type: 'child', value: 'goat-appetizers', indent: true },
+  { label: 'Lamb Appetizers', type: 'child', value: 'lamb-appetizers', indent: true },
+  { label: 'Beef Appetizers', type: 'child', value: 'beef-appetizers', indent: true },
+  { label: 'Fish Appetizers', type: 'child', value: 'fish-appetizers', indent: true },
+  { label: 'Shrimp Appetizers', type: 'child', value: 'shrimp-appetizers', indent: true },
+  
+  { label: 'Main Courses', type: 'parent', value: 'main-courses', isHeader: true },
+  { label: 'Hyderabad Dum Biryani', type: 'child', value: 'hyderabad-dum-biryani', indent: true },
+  { label: 'Vegetarian Main Course (Curry)', type: 'child', value: 'vegetarian-main-course', indent: true },
+  { label: 'Chicken Main Course (Curries)', type: 'child', value: 'chicken-main-course', indent: true },
+  { label: 'Mutton Main Course (Goat, Lamb)', type: 'child', value: 'mutton-main-course', indent: true },
+  { label: 'Fish Main Course (Curry)', type: 'child', value: 'fish-main-course', indent: true },
+  { label: 'Shrimp Main Course (Curry)', type: 'child', value: 'shrimp-main-course', indent: true },
+  { label: 'Beef Main Course', type: 'child', value: 'beef-main-course', indent: true },
+  
+  { label: 'Breads & Sides', type: 'parent', value: 'breads-sides', isHeader: true },
+  { label: 'Naans, Breads & Roti', type: 'child', value: 'naans-breads-roti', indent: true },
+  { label: 'Extra\'s Sides', type: 'child', value: 'extras-sides', indent: true },
+  
+  { label: 'Drinks & Desserts', type: 'parent', value: 'drinks-desserts', isHeader: true },
+  { label: 'Beverages', type: 'child', value: 'beverages', indent: true },
+  { label: 'Desserts', type: 'child', value: 'desserts', indent: true }
 ];
+
+interface ChildCatDetails {
+  label: string;
+  parent: string;
+  order: number;
+}
+
+const childCategories: Record<string, ChildCatDetails> = {
+  'chef-specials': { label: "Chef Specials", parent: "specials", order: 1 },
+  'best-sellers': { label: "Best Sellers", parent: "specials", order: 2 },
+  'chaat': { label: "Chaat", parent: "starters", order: 3 },
+  'pakora': { label: "Pakora", parent: "starters", order: 4 },
+  'soups': { label: "Soups", parent: "starters", order: 5 },
+  'salads': { label: "Salads", parent: "starters", order: 6 },
+  'tandoori-kebabs-grill': { label: "Tandoori Kebabs & Grill", parent: "starters", order: 7 },
+  'vegetarian-appetizers': { label: "Vegetarian Appetizers", parent: "starters", order: 8 },
+  'non-veg-appetizers': { label: "Non-Veg Appetizers", parent: "starters", order: 9 },
+  'goat-appetizers': { label: "Goat Appetizers", parent: "starters", order: 10 },
+  'lamb-appetizers': { label: "Lamb Appetizers", parent: "starters", order: 11 },
+  'beef-appetizers': { label: "Beef Appetizers", parent: "starters", order: 12 },
+  'fish-appetizers': { label: "Fish Appetizers", parent: "starters", order: 13 },
+  'shrimp-appetizers': { label: "Shrimp Appetizers", parent: "starters", order: 14 },
+  'hyderabad-dum-biryani': { label: "Hyderabad Dum Biryani", parent: "main-courses", order: 15 },
+  'vegetarian-main-course': { label: "Vegetarian Main Course (Curry)", parent: "main-courses", order: 16 },
+  'chicken-main-course': { label: "Chicken Main Course (Curries)", parent: "main-courses", order: 17 },
+  'mutton-main-course': { label: "Mutton Main Course (Goat, Lamb)", parent: "main-courses", order: 18 },
+  'fish-main-course': { label: "Fish Main Course (Curry)", parent: "main-courses", order: 19 },
+  'shrimp-main-course': { label: "Shrimp Main Course (Curry)", parent: "main-courses", order: 20 },
+  'beef-main-course': { label: "Beef Main Course", parent: "main-courses", order: 21 },
+  'naans-breads-roti': { label: "Naans, Breads & Roti", parent: "breads-sides", order: 22 },
+  'extras-sides': { label: "Extra's Sides", parent: "breads-sides", order: 23 },
+  'beverages': { label: "Beverages", parent: "drinks-desserts", order: 24 },
+  'desserts': { label: "Desserts", parent: "drinks-desserts", order: 25 }
+};
 
 export default function MenuPage() {
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('all');
-  const [dietFilter, setDietFilter] = useState<'all' | 'veg' | 'non-veg' | 'popular'>('all');
+  const [selectedOption, setSelectedOption] = useState<DropdownOption>(dropdownOptions[0]);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Filter logic
-  const filteredItems = useMemo(() => {
-    return menuItems.filter((item) => {
-      // Category match
-      const categoryMatch = selectedCategory === 'all' || item.category === selectedCategory;
+  // Close dropdown on click outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
-      // Diet match
-      let dietMatch = true;
-      if (dietFilter === 'veg') {
-        dietMatch = item.vegetarian;
-      } else if (dietFilter === 'non-veg') {
-        dietMatch = !item.vegetarian;
-      } else if (dietFilter === 'popular') {
-        dietMatch = item.popular;
+  // Filter and group items by child category
+  const groupedMenu = useMemo(() => {
+    const groups: Record<string, typeof menuItems> = {};
+
+    // Initialize groups depending on selected filter option
+    Object.entries(childCategories)
+      .sort((a, b) => a[1].order - b[1].order)
+      .forEach(([key, details]) => {
+        if (selectedOption.type === 'parent') {
+          if (selectedOption.value === 'all' || details.parent === selectedOption.value) {
+            groups[key] = [];
+          }
+        } else {
+          if (key === selectedOption.value) {
+            groups[key] = [];
+          }
+        }
+      });
+
+    menuItems.forEach((item) => {
+      const details = childCategories[item.category];
+      if (!details) return;
+
+      // Group & parent filter match
+      if (selectedOption.type === 'parent') {
+        if (selectedOption.value !== 'all' && details.parent !== selectedOption.value) {
+          return;
+        }
+      } else {
+        if (item.category !== selectedOption.value) {
+          return;
+        }
       }
 
-      // Search match (name or description)
+      // Search match
       const query = searchQuery.toLowerCase().trim();
       const searchMatch =
         query === '' ||
         item.name.toLowerCase().includes(query) ||
         item.description.toLowerCase().includes(query);
 
-      return categoryMatch && dietMatch && searchMatch;
+      if (searchMatch) {
+        if (!groups[item.category]) {
+          groups[item.category] = [];
+        }
+        groups[item.category].push(item);
+      }
     });
-  }, [selectedCategory, dietFilter, searchQuery]);
+
+    // Remove empty groups to keep UI clean
+    return Object.fromEntries(
+      Object.entries(groups).filter(([_, items]) => items.length > 0)
+    );
+  }, [selectedOption, searchQuery]);
+
+  const hasItems = Object.keys(groupedMenu).length > 0;
 
   return (
     <>
@@ -72,94 +184,91 @@ export default function MenuPage() {
           </div>
         </section>
 
-        {/* Search, Filter controls, and Grid */}
+        {/* Search and Dropdown Filter controls */}
         <section className="py-12 max-w-7xl mx-auto px-6 md:px-8 relative z-10">
           
           {/* Controls Bar */}
-          <div className="flex flex-col lg:flex-row gap-6 justify-between items-stretch lg:items-center mb-12 pb-6 border-b border-royal-gold/15">
+          <div className="flex flex-col md:flex-row gap-6 justify-between items-stretch md:items-center mb-12 pb-6 border-b border-royal-gold/15">
             {/* Search Input */}
             <div className="relative flex-1 max-w-md">
               <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-royal-gold/60 w-5 h-5" />
               <input
                 type="text"
-                placeholder="Search menu (e.g. Chicken Biryani, Butter Chicken...)"
+                placeholder="Search menu (e.g. Biryani, Curry, Naan...)"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full h-[50px] pl-12 pr-6 rounded-2xl bg-secondary-black border border-royal-gold/15 text-sm text-ivory placeholder-ivory/30 focus:outline-none focus:border-royal-gold transition-colors duration-300 shadow-gold-glow"
               />
             </div>
 
-            {/* Diet Filters */}
-            <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-              <span className="font-plus-jakarta text-xs font-semibold uppercase tracking-wider text-ivory/60 mr-1">Filter:</span>
+            {/* Premium Hierarchical Dropdown Category Selector */}
+            <div className="relative min-w-[280px] md:max-w-sm w-full md:w-auto" ref={dropdownRef}>
               <button
-                onClick={() => setDietFilter('all')}
-                className={`px-4 py-2 rounded-full font-plus-jakarta text-xs font-medium uppercase tracking-wider transition-all duration-300 ${
-                  dietFilter === 'all'
-                    ? 'bg-royal-gold text-primary-black font-semibold'
-                    : 'border border-royal-gold/20 text-royal-gold hover:bg-royal-gold/10'
-                }`}
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                className="w-full h-[50px] px-6 rounded-2xl bg-secondary-black border border-royal-gold/15 text-sm text-ivory flex items-center justify-between hover:border-royal-gold/45 focus:outline-none transition-all duration-300 shadow-gold-glow cursor-pointer"
               >
-                All
+                <span className="font-playfair font-bold text-royal-gold tracking-wide text-left truncate pr-2">
+                  {selectedOption.label}
+                </span>
+                <ChevronDown className={`w-4 h-4 text-royal-gold/80 flex-shrink-0 transition-transform duration-300 ${isDropdownOpen ? 'transform rotate-180' : ''}`} />
               </button>
-              <button
-                onClick={() => setDietFilter('veg')}
-                className={`px-4 py-2 rounded-full font-plus-jakarta text-xs font-medium uppercase tracking-wider transition-all duration-300 ${
-                  dietFilter === 'veg'
-                    ? 'bg-emerald-600 text-ivory font-semibold'
-                    : 'border border-emerald-500/20 text-emerald-400 hover:bg-emerald-500/10'
-                }`}
-              >
-                Veg Only
-              </button>
-              <button
-                onClick={() => setDietFilter('non-veg')}
-                className={`px-4 py-2 rounded-full font-plus-jakarta text-xs font-medium uppercase tracking-wider transition-all duration-300 ${
-                  dietFilter === 'non-veg'
-                    ? 'bg-red-700 text-ivory font-semibold'
-                    : 'border border-red-500/20 text-red-400 hover:bg-red-500/10'
-                }`}
-              >
-                Non-Veg Only
-              </button>
-              <button
-                onClick={() => setDietFilter('popular')}
-                className={`px-4 py-2 rounded-full font-plus-jakarta text-xs font-medium uppercase tracking-wider transition-all duration-300 ${
-                  dietFilter === 'popular'
-                    ? 'bg-maroon text-royal-gold border border-royal-gold/30 font-semibold'
-                    : 'border border-royal-gold/20 text-royal-gold hover:bg-royal-gold/10'
-                }`}
-              >
-                Best Sellers
-              </button>
+              
+              {isDropdownOpen && (
+                <div className="absolute right-0 mt-2 w-full max-h-[400px] overflow-y-auto rounded-2xl bg-secondary-black border border-royal-gold/15 shadow-2xl z-20 py-2 scrollbar-thin scrollbar-thumb-royal-gold scrollbar-track-transparent">
+                  {dropdownOptions.map((opt, idx) => {
+                    const isSelected = selectedOption.type === opt.type && selectedOption.value === opt.value;
+                    return (
+                      <button
+                        key={`${opt.type}-${opt.value}-${idx}`}
+                        onClick={() => {
+                          setSelectedOption(opt);
+                          setIsDropdownOpen(false);
+                        }}
+                        className={`w-full px-6 py-2.5 text-left text-sm font-playfair tracking-wide flex items-center justify-between hover:bg-royal-gold/5 transition-all duration-150 cursor-pointer ${
+                          isSelected 
+                            ? 'text-royal-gold bg-royal-gold/5 font-bold' 
+                            : opt.isHeader 
+                              ? 'text-royal-gold font-extrabold border-b border-royal-gold/5 mt-2 pb-1.5' 
+                              : 'text-ivory/80 hover:text-royal-gold'
+                        } ${opt.indent ? 'pl-10 text-xs italic font-medium' : ''}`}
+                      >
+                        <span>{opt.label}</span>
+                        {isSelected && <Check className="w-3.5 h-3.5 text-royal-gold flex-shrink-0" />}
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
             </div>
           </div>
 
-          {/* Category Slider Tabs */}
-          <div className="flex gap-2 overflow-x-auto pb-4 mb-12 scrollbar-thin scrollbar-thumb-royal-gold scrollbar-track-transparent">
-            {categories.map((cat) => (
-              <button
-                key={cat.value}
-                onClick={() => setSelectedCategory(cat.value)}
-                className={`px-6 py-3 rounded-full font-playfair text-xs font-bold uppercase tracking-widest whitespace-nowrap transition-all duration-300 cursor-pointer ${
-                  selectedCategory === cat.value
-                    ? 'bg-royal-gold text-primary-black shadow-gold-glow'
-                    : 'bg-secondary-black border border-royal-gold/10 text-ivory/80 hover:border-royal-gold/40'
-                }`}
-              >
-                {cat.label}
-              </button>
-            ))}
-          </div>
-
-          {/* Menu Items Grid */}
-          {filteredItems.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredItems.map((item) => (
-                <div key={item.id}>
-                  <DishCard item={item} />
-                </div>
-              ))}
+          {/* Grouped Menu List */}
+          {hasItems ? (
+            <div className="space-y-16">
+              {Object.entries(groupedMenu).map(([catKey, items]) => {
+                const catDetails = childCategories[catKey];
+                return (
+                  <div key={catKey} className="space-y-6 scroll-mt-24">
+                    <div className="flex items-center gap-4 border-b border-royal-gold/10 pb-3">
+                      <h2 className="font-playfair text-xl md:text-2xl font-bold tracking-wide text-royal-gold">
+                        {catDetails?.label || catKey}
+                      </h2>
+                      <div className="h-[1px] flex-1 bg-royal-gold/10" />
+                      <span className="font-plus-jakarta text-xs text-ivory/40 font-medium bg-secondary-black px-3 py-1 rounded-full border border-royal-gold/5">
+                        {items.length} {items.length === 1 ? 'item' : 'items'}
+                      </span>
+                    </div>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                      {items.map((item) => (
+                        <div key={item.id}>
+                          <DishCard item={item} />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           ) : (
             /* Elegant empty-state */
@@ -172,8 +281,7 @@ export default function MenuPage() {
               <button
                 onClick={() => {
                   setSearchQuery('');
-                  setSelectedCategory('all');
-                  setDietFilter('all');
+                  setSelectedOption(dropdownOptions[0]);
                 }}
                 className="mt-6 font-plus-jakarta text-xs font-semibold uppercase tracking-wider py-3 px-6 rounded-full bg-royal-gold text-primary-black hover:bg-light-gold transition-colors duration-300"
               >

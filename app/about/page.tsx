@@ -62,13 +62,13 @@ export default function AboutPage() {
       <main className="flex-1 bg-primary-black overflow-hidden text-ivory">
 
         {/* 1. Hero Section */}
-        <section className="relative py-16 sm:py-24 bg-secondary-black overflow-hidden bg-islamic-pattern">
+        <section className="relative py-24 bg-secondary-black overflow-hidden bg-islamic-pattern">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.04)_0%,transparent_80%)] pointer-events-none" />
           <div className="max-w-7xl mx-auto px-6 md:px-8 text-center relative z-10">
             <span className="font-cormorant text-lg italic text-royal-gold uppercase tracking-widest block mb-2">
               Our Journey
             </span>
-            <h1 className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide text-ivory">
+            <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide text-ivory">
               About Our Authentic Hyderabadi Restaurant in Manchester, NH
             </h1>
             <div className="mt-6 flex justify-center items-center gap-3">
@@ -354,17 +354,17 @@ export default function AboutPage() {
               {
                 icon: ShieldCheck,
                 title: '100% Halal Quality',
-
+                desc: 'Every dish is prepared using certified Halal ingredients while maintaining the highest standards of freshness and quality.'
               },
               {
                 icon: ChefHat,
                 title: 'Freshly Ground Spices',
-
+                desc: 'Our signature spice blends are roasted and ground in-house to preserve their authentic aroma and flavor.'
               },
               {
                 icon: Heart,
                 title: 'True Indian Hospitality',
-
+                desc: 'From the moment you walk through our doors, we welcome you with warmth, exceptional service, and memorable dining experiences.'
               }
             ].map((commit, idx) => {
               const Icon = commit.icon;
@@ -389,9 +389,12 @@ export default function AboutPage() {
                   <div className="p-4 bg-royal-gold/10 text-royal-gold rounded-full mb-6 group-hover:bg-royal-gold/25 group-hover:scale-110 transition-all duration-300 border border-royal-gold/10 shadow-gold-glow">
                     <Icon size={28} className="stroke-[1.5]" />
                   </div>
-                  <h3 className="font-playfair text-xl font-bold text-ivory mb-0 tracking-wide">
+                  <h3 className="font-playfair text-xl font-bold text-ivory mb-3 tracking-wide">
                     {commit.title}
                   </h3>
+                  <p className="font-plus-jakarta text-sm md:text-base text-zinc-300 leading-relaxed select-text relative z-10">
+                    {commit.desc}
+                  </p>
                 </motion.div>
               );
             })}
@@ -581,14 +584,14 @@ export default function AboutPage() {
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center">
               <Link
                 href="/menu"
-                className="font-plus-jakarta text-xs font-bold uppercase tracking-wider py-4 px-8 rounded-full bg-royal-gold text-primary-black hover:bg-light-gold transition-all duration-300 hover:scale-[1.03] shadow-gold-glow text-center"
+                className="font-plus-jakarta text-xs font-bold uppercase tracking-wider py-4.5 px-10 rounded-full bg-royal-gold text-primary-black hover:bg-light-gold transition-all duration-300 hover:scale-[1.03] shadow-gold-glow"
               >
                 Explore Our Menu
               </Link>
 
               <Link
                 href="/catering"
-                className="font-plus-jakarta text-xs font-bold uppercase tracking-wider py-4 px-8 rounded-full border border-royal-gold text-royal-gold hover:bg-royal-gold/10 transition-all duration-300 text-center"
+                className="font-plus-jakarta text-xs font-bold uppercase tracking-wider py-4.5 px-10 rounded-full border border-royal-gold text-royal-gold hover:bg-royal-gold/10 transition-all duration-300"
               >
                 Request Catering
               </Link>
