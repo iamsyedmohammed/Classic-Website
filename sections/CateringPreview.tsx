@@ -28,7 +28,23 @@ export default function CateringPreview() {
             </h2>
             
             <p className="font-plus-jakarta text-zinc-300 text-sm md:text-base leading-relaxed select-text">
-              We provide professional <strong>Indian catering in Manchester, NH</strong> and surrounding southern New Hampshire regions. Whether you need <strong>wedding catering</strong>, <strong>corporate catering</strong>, <strong>birthday catering</strong>, or <strong>Halal catering</strong>, we craft bespoke menus with authentic <strong>Hyderabadi catering</strong> packages and presentation setups.
+              We provide professional{' '}
+              <Link href="/catering" className="text-royal-gold hover:underline font-semibold">
+                Indian catering in Manchester, NH
+              </Link>{' '}
+              and surrounding southern New Hampshire regions. Whether you need{' '}
+              <Link href="/catering" className="text-royal-gold hover:underline font-semibold">
+                wedding catering
+              </Link>
+              ,{' '}
+              <Link href="/catering" className="text-royal-gold hover:underline font-semibold">
+                corporate catering
+              </Link>
+              , birthday catering, or Halal catering, we craft bespoke menus with authentic{' '}
+              <Link href="/catering" className="text-royal-gold hover:underline font-semibold">
+                Hyderabadi catering
+              </Link>{' '}
+              packages and presentation setups.
             </p>
             
             <div className="pt-2">

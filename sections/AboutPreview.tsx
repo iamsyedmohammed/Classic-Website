@@ -88,7 +88,19 @@ export default function AboutPreview() {
                 variants={fadeUp}
                 className="font-plus-jakarta text-base md:text-lg text-zinc-200 leading-relaxed mb-8"
               >
-                {aboutPreviewContent.description}
+                Classic Biryani Kabab & Curry brings the authentic flavors of{' '}
+                <Link href="/menu" className="text-royal-gold hover:underline font-semibold">
+                  Hyderabad
+                </Link>{' '}
+                to Manchester, New Hampshire. Inspired by generations of culinary tradition, we prepare every meal with traditional{' '}
+                <Link href="/menu" className="text-royal-gold hover:underline font-semibold">
+                  Dum cooking
+                </Link>{' '}
+                methods. As a family-friendly{' '}
+                <Link href="/about" className="text-royal-gold hover:underline font-semibold">
+                  Indian restaurant
+                </Link>{' '}
+                on South Main Street Manchester, we are dedicated to serving Halal Indian food crafted from fresh ground spices, premium ingredients, and genuine hospitality.
               </motion.p>
 
               {/* Story Highlights */}

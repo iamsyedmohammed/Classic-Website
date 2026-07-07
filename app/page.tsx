@@ -8,6 +8,7 @@ import FeaturedVideos from '@/sections/FeaturedVideos';
 import CateringPreview from '@/sections/CateringPreview';
 import TestimonialsSection from '@/sections/Testimonials';
 import GalleryPreview from '@/sections/GalleryPreview';
+import HomeFAQs from '@/sections/HomeFAQs';
 import LocationContact from '@/sections/LocationContact';
 import Footer from '@/components/Footer';
 import SectionDivider from '@/components/SectionDivider';
@@ -38,6 +39,8 @@ export default function Home() {
         <TestimonialsSection />
         <SectionDivider />
         <GalleryPreview />
+        <SectionDivider />
+        <HomeFAQs />
         <SectionDivider />
         <LocationContact />
       </main>

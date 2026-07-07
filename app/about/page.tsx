@@ -97,7 +97,23 @@ export default function AboutPage() {
                 Our Story
               </h2>
               <p className="font-plus-jakarta text-base md:text-lg text-zinc-200 leading-relaxed mb-6 select-text">
-                Since 2021, Classic Biryani Kabab & Curry has brought the authentic flavors of Hyderabad to Manchester, New Hampshire. As a family-owned Hand Zabiha Halal Indian restaurant, we serve authentic Hyderabadi Dum Biryani, kababs, Indian curries, and tandoori dishes prepared with premium ingredients, freshly ground spices, and traditional Dum Pukht cooking. Whether you visit for dine-in, takeout, delivery, lunch buffet, or catering, our goal is simple—serve authentic Indian food that feels like home.
+                Since 2021, Classic Biryani Kabab & Curry has brought the authentic flavors of{' '}
+                <Link href="/menu" className="text-royal-gold hover:underline font-semibold">
+                  Hyderabad
+                </Link>{' '}
+                to Manchester, New Hampshire. As a family-owned Hand Zabiha Halal Indian restaurant, we serve authentic{' '}
+                <Link href="/menu" className="text-royal-gold hover:underline font-semibold">
+                  Hyderabadi Dum Biryani
+                </Link>
+                , kababs, Indian curries, and tandoori dishes prepared with premium ingredients, freshly ground spices, and traditional Dum Pukht cooking. Whether you visit for dine-in, takeout, delivery,{' '}
+                <Link href="/menu" className="text-royal-gold hover:underline font-semibold">
+                  lunch buffet
+                </Link>
+                , or{' '}
+                <Link href="/catering" className="text-royal-gold hover:underline font-semibold">
+                  catering
+                </Link>
+                , our goal is simple—serve authentic Indian food that feels like home.
               </p>
             </motion.div>
 
@@ -162,7 +178,11 @@ export default function AboutPage() {
                   Our Mission
                 </h2>
                 <p className="font-plus-jakarta text-base md:text-lg text-zinc-200 leading-relaxed select-text">
-                  Our mission is to preserve Hyderabad&apos;s rich culinary heritage by preparing authentic Indian cuisine with traditional recipes, premium ingredients, and genuine hospitality while creating memorable dining experiences for every guest.
+                  Our mission is to preserve Hyderabad&apos;s rich culinary heritage by preparing authentic{' '}
+                  <Link href="/menu" className="text-royal-gold hover:underline font-semibold">
+                    Indian cuisine
+                  </Link>{' '}
+                  with traditional recipes, premium ingredients, and genuine hospitality while creating memorable dining experiences for every guest.
                 </p>
               </motion.div>
 
@@ -292,7 +312,11 @@ export default function AboutPage() {
                 The Authentic Hyderabadi Dum Biryani Experience
               </h2>
               <p className="font-plus-jakarta text-base md:text-lg text-zinc-200 leading-relaxed select-text">
-                Our Hyderabadi Dum Biryani is prepared using the traditional Dum Pukht technique, with premium meats, fragrant basmati rice, fresh herbs, and hand-ground spices slow-cooked in a sealed handi to deliver rich aromas, tender meat, and authentic royal flavors.
+                Our{' '}
+                <Link href="/menu" className="text-royal-gold hover:underline font-semibold">
+                  Hyderabadi Dum Biryani
+                </Link>{' '}
+                is prepared using the traditional Dum Pukht technique, with premium meats, fragrant basmati rice, fresh herbs, and hand-ground spices slow-cooked in a sealed handi to deliver rich aromas, tender meat, and authentic royal flavors.
               </p>
             </motion.div>
 
@@ -315,7 +339,11 @@ export default function AboutPage() {
                 What Sets Us Apart
               </h2>
               <p className="font-plus-jakarta text-base md:text-lg text-zinc-200 leading-relaxed max-w-5xl mx-auto select-text">
-                Unlike many restaurants that prepare biryani in large batches, every handi at Classic Biryani Kabab & Curry is crafted using the traditional Dum method, allowing the flavors to develop naturally. Combined with premium ingredients, certified Halal meats, and genuine hospitality, we deliver an authentic Hyderabadi dining experience in every serving.
+                Unlike many restaurants that prepare biryani in large batches, every handi at Classic Biryani Kabab & Curry is crafted using the traditional{' '}
+                <Link href="/menu" className="text-royal-gold hover:underline font-semibold">
+                  Dum cooking method
+                </Link>
+                , allowing the flavors to develop naturally. Combined with premium ingredients, certified Halal meats, and genuine hospitality, we deliver an authentic Hyderabadi dining experience in every serving.
               </p>
             </motion.div>
           </div>
@@ -423,20 +451,20 @@ export default function AboutPage() {
               {/* Checklist Block */}
               <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-5">
                 {[
-                  'Authentic Hyderabadi Dum Biryani',
-                  'Premium Long-Grain Basmati Rice',
-                  'Fresh Ingredients Every Day',
-                  'Family-Friendly Dining',
-                  'Catering for Weddings & Events',
-                  'Convenient Takeout & Delivery'
+                  { label: 'Authentic Hyderabadi Dum Biryani', href: '/menu' },
+                  { label: 'Premium Long-Grain Basmati Rice', href: '/menu' },
+                  { label: 'Fresh Ingredients Every Day', href: '/about' },
+                  { label: 'Family-Friendly Dining', href: '/about' },
+                  { label: 'Catering for Weddings & Events', href: '/catering' },
+                  { label: 'Convenient Takeout & Delivery', href: '/contact' }
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-3 p-4 bg-secondary-black/40 border border-royal-gold/10 hover:border-royal-gold/30 rounded-2xl transition-all duration-300">
                     <div className="w-6 h-6 rounded-full bg-royal-gold/15 text-royal-gold flex items-center justify-center shrink-0">
                       <Check size={14} className="stroke-[2.5]" />
                     </div>
-                    <span className="font-plus-jakarta text-sm md:text-base font-medium text-zinc-200">
-                      {item}
-                    </span>
+                    <Link href={item.href} className="font-plus-jakarta text-sm md:text-base font-medium text-zinc-200 hover:text-royal-gold transition-colors duration-150">
+                      {item.label}
+                    </Link>
                   </div>
                 ))}
               </div>

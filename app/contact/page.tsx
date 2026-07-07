@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Link from 'next/link';
 import ContactInfoCard from '@/components/ContactInfoCard';
 import ContactForm from '@/components/ContactForm';
 
@@ -92,9 +93,21 @@ export default function ContactPage() {
             </span>
           <h1 className="font-playfair text-3xl sm:text-4xl md:text-5xl font-bold tracking-wide text-ivory">
               Get Directions, Contact Us &amp; Reserve Your Table</h1>
-            <p className="font-plus-jakarta text-xs text-ivory/60 mt-3 max-w-3xl mx-auto">
-              Visit Classic Biryani Kabab & Curry at 484 South Main Street, Manchester, NH, for authentic Hyderabadi Dum Biryani, Hand Zabiha Halal Indian cuisine, dine-in, takeout, delivery, and catering. Have a question? Our friendly team is here to help.
-            </p>
+             <p className="font-plus-jakarta text-xs text-ivory/60 mt-3 max-w-3xl mx-auto">
+               Visit Classic Biryani Kabab & Curry at 484 South Main Street, Manchester, NH, for authentic{' '}
+               <Link href="/menu" className="text-royal-gold hover:underline font-semibold">
+                 Hyderabadi Dum Biryani
+               </Link>
+               ,{' '}
+               <Link href="/about" className="text-royal-gold hover:underline font-semibold">
+                 Hand Zabiha Halal Indian cuisine
+               </Link>
+               , dine-in, takeout, delivery, and{' '}
+               <Link href="/catering" className="text-royal-gold hover:underline font-semibold">
+                 catering
+               </Link>
+               . Have a question? Our friendly team is here to help.
+             </p>
           </div>
         </section>
 

@@ -77,7 +77,11 @@ export default function CateringPage() {
               Royal Catering Services
             </h1>
             <p className="font-plus-jakarta text-base md:text-lg text-zinc-300 mt-4 max-w-xl mx-auto leading-relaxed">
-              Bringing Hyderabad&apos;s rich culinary heritage and premium banquet hospitality to your events across New Hampshire.
+              Bringing{' '}
+              <Link href="/menu" className="text-royal-gold hover:underline font-semibold">
+                Hyderabad&apos;s rich culinary heritage
+              </Link>{' '}
+              and premium banquet hospitality to your events across New Hampshire.
             </p>
           </div>
         </section>
@@ -171,7 +175,11 @@ export default function CateringPage() {
                 Why Choose Classic Biryani Catering?
               </h2>
               <p className="font-plus-jakarta text-base md:text-lg text-zinc-300 leading-relaxed mb-6 select-text">
-                From intimate family gatherings to grand wedding celebrations, we bring the authentic flavors of Hyderabad together with professional service and elegant presentation. Every event is planned with care to ensure your guests enjoy fresh, flavorful food delivered on time.
+                From intimate family gatherings to grand wedding celebrations, we bring the{' '}
+                <Link href="/menu" className="text-royal-gold hover:underline font-semibold">
+                  authentic flavors of Hyderabad
+                </Link>{' '}
+                together with professional service and elegant presentation. Every event is planned with care to ensure your guests enjoy fresh, flavorful food delivered on time.
               </p>
               <div className="w-24 h-[1px] bg-royal-gold/40 my-2" />
               <p className="font-plus-jakarta text-sm text-zinc-400">

@@ -3,8 +3,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { heroContent } from '@/content/home';
-import { ArrowRight, Star } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
+import { ArrowRight, Star } from 'lucide-react';
 
 export default function Hero() {
   const containerVariants = {
@@ -77,7 +78,15 @@ export default function Hero() {
               variants={fadeUp}
               className="font-plus-jakarta text-zinc-300 text-base md:text-lg max-w-xl mb-8 leading-relaxed"
             >
-              {heroContent.subtitle}
+              Experience the{' '}
+              <Link href="/menu" className="text-royal-gold hover:underline font-semibold">
+                Royal Taste of Hyderabad
+              </Link>{' '}
+              with authentic Hyderabadi Dum Biryani, flavorful Indian Kababs, rich curries, and premium{' '}
+              <Link href="/catering" className="text-royal-gold hover:underline font-semibold">
+                Royal Catering
+              </Link>{' '}
+              services in Manchester, NH.
             </motion.p>
 
             {/* Action buttons - stacked on mobile, side-by-side on sm+ */}
@@ -113,10 +122,13 @@ export default function Hero() {
           >
             {/* Main Showpiece Image in circular shape without motion */}
             <div className="relative w-[240px] h-[240px] sm:w-[340px] sm:h-[340px] md:w-[420px] md:h-[420px] shadow-gold-glow border-2 border-royal-gold/20 rounded-full overflow-hidden bg-secondary-black">
-              <img
+              <Image
                 src="/images/menu/chicken-dum-biryani-manchester-nh.webp"
                 alt="Authentic Hyderabadi Chicken Dum Biryani"
-                className="w-full h-full object-cover object-center"
+                fill
+                priority
+                className="object-cover object-center"
+                sizes="(max-width: 768px) 240px, (max-width: 1024px) 340px, 420px"
               />
             </div>
 
@@ -156,7 +168,7 @@ export default function Hero() {
                 ))}
               </div>
               <div>
-                <p className="font-plus-jakarta text-xs font-bold text-ivory">700+ Happy Guests</p>
+                <p className="font-plus-jakarta text-xs font-bold text-ivory">750+ Happy Guests</p>
                 <div className="flex items-center gap-1 mt-0.5">
                   <Star size={10} fill="currentColor" className="text-royal-gold stroke-none" />
                   <span className="font-plus-jakarta text-[10px] text-zinc-400 font-semibold">4.9 Star Rating</span>

@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Link from 'next/link';
 import SectionHeading from '@/components/SectionHeading';
 import { galleryItems } from '@/content/gallery';
 import Image from 'next/image';
@@ -139,6 +140,14 @@ export default function GalleryPage() {
                 </span>
               </div>
             ))}
+          </div>
+
+          {/* CTA Link Section for Gallery Page */}
+          <div className="mt-16 text-center max-w-2xl mx-auto p-8 rounded-3xl border border-royal-gold/15 bg-secondary-black/40 backdrop-blur-md shadow-gold-glow">
+            <h3 className="font-playfair text-xl font-bold text-royal-gold mb-3">Craving These Nizami Flavors?</h3>
+            <p className="font-plus-jakarta text-sm text-zinc-300 mb-6 leading-relaxed">
+              Explore our full selection of hand zabiha halal biryanis and kebabs on the <Link href="/menu" className="text-royal-gold hover:underline font-bold">Menu Page</Link>, or inquire about custom packages on the <Link href="/catering" className="text-royal-gold hover:underline font-bold">Catering Page</Link> for your next celebration.
+            </p>
           </div>
         </section>
 
