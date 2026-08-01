@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, MapPin, Clock } from 'lucide-react';
+import { Phone, MapPin, Clock, Mail } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -25,7 +25,7 @@ export default function Footer() {
               </div>
             </Link> */}
             <p className="font-plus-jakarta text-base text-zinc-300 leading-relaxed mt-2 select-text">
-              Classic Biryani Kabab & Curry proudly serves authentic Hyderabadi Dum Biryani, Indian curries, kababs, 100% Halal cuisine, Indian lunch buffet, and professional catering services in Manchester, New Hampshire. Visit us for dine-in, takeout, delivery, and catering.
+              Classic Biryani Kabab & Curry proudly serves authentic Hyderabadi Dum Biryani, Indian curries, kababs, 100% Halal cuisine, and professional catering services in Manchester, New Hampshire. Visit us for dine-in, takeout, delivery, and catering.
             </p>
             {/* Social Links */}
             <div className="flex gap-4 mt-2">
@@ -94,19 +94,12 @@ export default function Footer() {
             </h3>
             <ul className="flex flex-col gap-3 font-plus-jakarta text-base text-zinc-300">
               <li className="flex flex-wrap justify-between gap-x-4 border-b border-royal-gold/10 pb-2">
-                <span>Mon - Thu</span>
-                <span className="text-zinc-100">11:00 AM - 10:00 PM</span>
+                <span>Mon, Wed - Sun</span>
+                <span className="text-zinc-100">12:00 PM - 12:00 AM</span>
               </li>
               <li className="flex flex-wrap justify-between gap-x-4 border-b border-royal-gold/10 pb-2">
-                <span>Fri - Sat</span>
-                <span className="text-zinc-100 font-semibold text-royal-gold">11:00 AM - 11:00 PM</span>
-              </li>
-              <li className="flex flex-wrap justify-between gap-x-4 border-b border-royal-gold/10 pb-2">
-                <span>Sunday</span>
-                <span className="text-zinc-100">12:00 PM - 9:30 PM</span>
-              </li>
-              <li className="text-sm text-royal-gold/80 italic mt-2">
-                * Serving lunch buffet daily from 11:30 AM to 3:00 PM
+                <span>Tuesday</span>
+                <span className="text-royal-gold/70 italic">Closed</span>
               </li>
             </ul>
           </div>
@@ -131,8 +124,14 @@ export default function Footer() {
               </li>
               <li className="flex gap-3">
                 <Phone size={18} className="text-royal-gold shrink-0 mt-0.5" />
-                <a href="tel:6035550199" className="hover:text-royal-gold transition-colors duration-300">
-                  (603) 555-0199
+                <a href="tel:+16032065203" className="hover:text-royal-gold transition-colors duration-300">
+                  +1 603-206-5203
+                </a>
+              </li>
+              <li className="flex gap-3">
+                <Mail size={18} className="text-royal-gold shrink-0 mt-0.5" />
+                <a href="mailto:classicbkc@gmail.com" className="hover:text-royal-gold transition-colors duration-300">
+                  classicbkc@gmail.com
                 </a>
               </li>
               <li className="mt-4 flex flex-col items-center gap-2">

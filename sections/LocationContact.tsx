@@ -36,25 +36,23 @@ export default function LocationContact() {
             <ContactInfoCard
               iconName="Phone"
               title="Phone Number"
-              description="(603) 555-0199"
-              href="tel:6035550199"
+              description="+1 603-206-5203"
+              href="tel:+16032065203"
             />
 
             <ContactInfoCard
               iconName="Clock"
               title="Dine-In Hours"
-              description="Mon - Thu: 11 AM - 10 PM | Fri - Sat: 11 AM - 11 PM | Sun: 12 PM - 9:30 PM"
+              description="Mon, Wed - Sun: 12 PM - 12 AM | Tue: Closed"
             />
 
-            {/* Quick CTAs */}
-            <div className="p-6 rounded-3xl border border-royal-gold/15 bg-secondary-black flex flex-col justify-center items-center text-center gap-3">
-              <h4 className="font-playfair text-lg font-bold text-royal-gold uppercase tracking-wider">
-                Lunch Buffet Daily
-              </h4>
-              <p className="font-plus-jakarta text-sm text-zinc-200 leading-relaxed">
-                Enjoy over 15+ authentic Hyderabadi curries, biryanis, appetizers, and traditional desserts fresh every day from 11:30 AM to 3:00 PM.
-              </p>
-            </div>
+            <ContactInfoCard
+              iconName="Mail"
+              title="Email Us"
+              description="classicbkc@gmail.com"
+              href="mailto:classicbkc@gmail.com"
+            />
+
           </m.div>
 
           {/* Map Column */}

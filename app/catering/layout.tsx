@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Royal Catering Services | The Classic Biryani Manchester NH',
     description:
-      'Professional Halal catering for weddings, Walimas, corporate events, and birthday parties in Manchester, NH. Authentic Hyderabadi menus and elegant buffet presentation.',
+      'Professional Halal catering for weddings, Walimas, corporate events, and birthday parties in Manchester, NH. Authentic Hyderabadi menus and exceptional presentation.',
     url: 'https://theclassicbiryani.com/catering',
     siteName: 'The Classic Biryani',
     images: [{ url: '/images/og-image.webp', width: 1200, height: 630, alt: 'The Classic Biryani Catering Services' }],

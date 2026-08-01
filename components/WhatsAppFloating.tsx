@@ -5,7 +5,7 @@ import React from 'react';
 export default function WhatsAppFloating() {
   return (
     <a
-      href="https://wa.me/16035550199"
+      href="https://wa.me/16032065203"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Contact us on WhatsApp"

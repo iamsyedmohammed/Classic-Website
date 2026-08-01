@@ -69,8 +69,10 @@ export default function Hero() {
               variants={fadeUp}
               className="font-playfair text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold tracking-wide text-ivory mb-6 leading-tight max-w-2xl"
             >
-              Experience the <br /> Royal Taste of <br />
-              <span className="text-royal-gold bg-gradient-to-r from-royal-gold to-light-gold bg-clip-text text-transparent">Hyderabad</span>
+              From the <br />
+              <span className="text-royal-gold bg-gradient-to-r from-royal-gold to-light-gold bg-clip-text text-transparent">City of Pearls</span>
+              <br />
+              to the Granite State
             </motion.h1>
 
             {/* Subtext description */}

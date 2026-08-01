@@ -36,7 +36,7 @@ export default function GalleryPreview() {
       'gal-3': 'Crispy Chicken 65',
       'gal-4': 'Luxury Interior',
       'gal-5': 'Nizami Seating',
-      'gal-6': 'Royal Buffet Setup',
+      'gal-6': 'Royal Catering Setup',
       'gal-7': 'Wedding Catering',
       'gal-8': 'Double Ka Meetha',
       'gal-9': 'Qubani Ka Meetha'

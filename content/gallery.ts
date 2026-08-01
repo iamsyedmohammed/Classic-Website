@@ -35,7 +35,7 @@ export const galleryItems: GalleryItem[] = [
     id: 'gal-6',
     image: '/images/gallery/buffet-catering-setup-manchester-nh.webp',
     category: 'catering',
-    alt: 'Luxury Indian catering buffet setup with copper chafing dishes'
+    alt: 'Luxury Indian catering setup with copper chafing dishes'
   },
   {
     id: 'gal-7',

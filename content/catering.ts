@@ -4,14 +4,14 @@ export const cateringIntro = {
   title: 'Celebrate with the Spirit of Mehmaan Nawazi',
   description: 'From intimate family gatherings to grand wedding celebrations, our custom catering services bring the rich culinary heritage of Hyderabad straight to your special occasions. We handle setup, display, and service with royal standards.',
   ctaText: 'Request Catering Quote',
-  phoneCTA: 'Call Catering Manager: (603) 555-0199'
+  phoneCTA: 'Call Catering Manager: +1 603-206-5203'
 };
 
 export const cateringOccasions: CateringOccasion[] = [
   {
     id: 'weddings',
     title: 'Weddings & Walimas',
-    description: 'Celebrate your biggest day with authentic Hyderabadi cuisine, elegant buffet setups, and exceptional hospitality that your guests will remember.',
+    description: 'Celebrate your biggest day with authentic Hyderabadi cuisine, elegant presentation, and exceptional hospitality that your guests will remember.',
     image: '/images/catering/wedding-catering-manchester-nh.png',
     suitableFor: ['Wedding receptions', 'Pre-wedding dinners', 'Walima ceremonies']
   },
@@ -110,7 +110,7 @@ export const cateringFAQs: FAQItem[] = [
   },
   {
     id: 'faq-4',
-    question: 'Do you offer buffet setup?',
+    question: 'Do you offer serving setup?',
     answer: 'Absolutely. We offer complete setup packages including elegant warming chafing dishes, display layouts, table decorations, and serving spoons to ensure a premium look.',
     category: 'catering'
   },

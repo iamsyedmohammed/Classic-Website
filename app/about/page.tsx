@@ -97,23 +97,21 @@ export default function AboutPage() {
                 Our Story
               </h2>
               <p className="font-plus-jakarta text-base md:text-lg text-zinc-200 leading-relaxed mb-6 select-text">
-                Since 2021, Classic Biryani Kabab & Curry has brought the authentic flavors of{' '}
-                <Link href="/menu" className="text-royal-gold hover:underline font-semibold">
-                  Hyderabad
-                </Link>{' '}
-                to Manchester, New Hampshire. As a family-owned Hand Zabiha Halal Indian restaurant, we serve authentic{' '}
+                Some journeys begin with a business plan. Ours began with a{' '}
+                <span className="text-royal-gold font-semibold">craving</span>. Miles away from home, there was something we missed more than anything — the soul-stirring aroma of{' '}
                 <Link href="/menu" className="text-royal-gold hover:underline font-semibold">
                   Hyderabadi Dum Biryani
                 </Link>
-                , kababs, Indian curries, and tandoori dishes prepared with premium ingredients, freshly ground spices, and traditional Dum Pukht cooking. Whether you visit for dine-in, takeout, delivery,{' '}
-                <Link href="/menu" className="text-royal-gold hover:underline font-semibold">
-                  lunch buffet
-                </Link>
-                , or{' '}
-                <Link href="/catering" className="text-royal-gold hover:underline font-semibold">
-                  catering
-                </Link>
-                , our goal is simple—serve authentic Indian food that feels like home.
+                . Not just any biryani, but <em>that</em> biryani — the kind that fills the air with the warm, aromatic fragrance of{' '}
+                <span className="text-royal-gold font-semibold">saffron</span>, the comforting scent of{' '}
+                <span className="text-royal-gold font-semibold">basmati rice</span>, earthy whispers of spices, and a smokiness that tells you: this wasn&apos;t rushed. We searched everywhere, even driving{' '}
+                <span className="text-royal-gold font-semibold">5 hours to New York City</span>{' '}
+                just to taste something close. But nothing quite matched the memory we carried in our hearts.
+              </p>
+              <p className="font-plus-jakarta text-base md:text-lg text-zinc-200 leading-relaxed select-text">
+                So the search turned inward — into a{' '}
+                <span className="text-royal-gold font-semibold">small apartment kitchen</span>. What started as a personal attempt to relive a taste of home slowly turned into something extraordinary. My friends became the first tasters, and their reactions said what words couldn&apos;t — because this wasn&apos;t just cooking. This was{' '}
+                <span className="text-royal-gold font-semibold">emotions served on a plate</span>. Every smile, every word of appreciation planted a quiet seed: maybe this wasn&apos;t just homesickness. It was something more.
               </p>
             </motion.div>
 
@@ -178,11 +176,13 @@ export default function AboutPage() {
                   Our Mission
                 </h2>
                 <p className="font-plus-jakarta text-base md:text-lg text-zinc-200 leading-relaxed select-text">
-                  Our mission is to preserve Hyderabad&apos;s rich culinary heritage by preparing authentic{' '}
-                  <Link href="/menu" className="text-royal-gold hover:underline font-semibold">
-                    Indian cuisine
-                  </Link>{' '}
-                  with traditional recipes, premium ingredients, and genuine hospitality while creating memorable dining experiences for every guest.
+                  The real turning point came when a friend trusted me with a{' '}
+                  <span className="text-royal-gold font-semibold">birthday feast for 50 guests</span>. It was my first large{' '}
+                  <span className="text-royal-gold font-semibold">handi</span> — and with it came nerves, excitement, determination, sleepless nights of research, and a relentless pursuit of the{' '}
+                  <span className="text-royal-gold font-semibold">perfect spice blend</span>. When that handi was finally done, the room filled with that unmistakable rich dum aroma of saffron, spices, and slow-cooked perfection. Conversations paused. Smiles spread. And in that moment, we realised something powerful — this wasn&apos;t just food being served. This was{' '}
+                  <span className="text-royal-gold font-semibold">nostalgia</span>. This was{' '}
+                  <span className="text-royal-gold font-semibold">connection</span>. This was{' '}
+                  <span className="text-royal-gold font-semibold">magic</span>.
                 </p>
               </motion.div>
 
@@ -312,11 +312,15 @@ export default function AboutPage() {
                 The Authentic Hyderabadi Dum Biryani Experience
               </h2>
               <p className="font-plus-jakarta text-base md:text-lg text-zinc-200 leading-relaxed select-text">
-                Our{' '}
+                Determined to turn passion into purpose, I spent the next{' '}
+                <span className="text-royal-gold font-semibold">seven years</span>{' '}
+                working in restaurants across New Hampshire and Massachusetts — learning every detail of the craft, from kitchens to customers, spices to systems. I wanted to understand not just cooking, but the{' '}
+                <span className="text-royal-gold font-semibold">soul behind hospitality</span>. Then in{' '}
+                <span className="text-royal-gold font-semibold">May 2019</span>, with nothing but dedication, belief, and hard work —{' '}
                 <Link href="/menu" className="text-royal-gold hover:underline font-semibold">
-                  Hyderabadi Dum Biryani
+                  Classic Biryani
                 </Link>{' '}
-                is prepared using the traditional Dum Pukht technique, with premium meats, fragrant basmati rice, fresh herbs, and hand-ground spices slow-cooked in a sealed handi to deliver rich aromas, tender meat, and authentic royal flavors.
+                was born. One person, one kitchen, and a handi for 10.
               </p>
             </motion.div>
 
@@ -339,11 +343,15 @@ export default function AboutPage() {
                 What Sets Us Apart
               </h2>
               <p className="font-plus-jakarta text-base md:text-lg text-zinc-200 leading-relaxed max-w-5xl mx-auto select-text">
-                Unlike many restaurants that prepare biryani in large batches, every handi at Classic Biryani Kabab & Curry is crafted using the traditional{' '}
+                This small beginning grew — not by chasing trends, but by{' '}
+                <span className="text-royal-gold font-semibold">honoring tradition</span>. Plate by plate, guest by guest, we grew. Not by rushing, not by compromising. But by holding onto the same promise as our very first handi —{' '}
+                <span className="text-royal-gold font-semibold">authentic taste, honest ingredients</span>, and the feeling of home in every serving. Today when you open a plate of our{' '}
                 <Link href="/menu" className="text-royal-gold hover:underline font-semibold">
-                  Dum cooking method
+                  Biryani
                 </Link>
-                , allowing the flavors to develop naturally. Combined with premium ingredients, certified Halal meats, and genuine hospitality, we deliver an authentic Hyderabadi dining experience in every serving.
+                , you&apos;re not just tasting a dish. You&apos;re tasting a{' '}
+                <span className="text-royal-gold font-semibold">journey</span>. A{' '}
+                <span className="text-royal-gold font-semibold">memory</span>. A dream that began in a small apartment kitchen and now lives on every table we serve.
               </p>
             </motion.div>
           </div>
@@ -444,7 +452,7 @@ export default function AboutPage() {
                 </h2>
                 <div className="w-20 h-1 bg-royal-gold rounded-full mb-6" />
                 <p className="font-plus-jakarta text-sm text-zinc-400 leading-relaxed">
-                  We are dedicated to providing the community of Manchester, NH with the ultimate culinary standards in Indian and Nizami cuisine.
+                  Welcome to Classic Biryani — where every handi tells a story. We are dedicated to providing Manchester, NH with authentic Hyderabadi flavors rooted in tradition, crafted with honest ingredients, and served with the warmth of home.
                 </p>
               </div>
 

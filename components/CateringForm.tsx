@@ -227,7 +227,7 @@ export default function CateringForm() {
         <textarea
           id="catering-message"
           rows={4}
-          placeholder="Let us know if you want buffet setup, live grill stations, or have specific allergy restrictions..."
+          placeholder="Let us know about live grill stations, specific dietary needs, or any other requirements..."
           {...register('message')}
           className="p-5 rounded-2xl bg-primary-black border border-royal-gold/20 text-sm text-ivory placeholder-ivory/30 focus:outline-none focus:border-royal-gold transition-colors duration-300 resize-none"
         />

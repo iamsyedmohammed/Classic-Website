@@ -18,7 +18,7 @@ export const metadata = {
     'Indian Food Manchester NH',
     'Contact Classic Biryani',
     'Indian Catering Manchester NH',
-    'Lunch Buffet Manchester NH',
+    'Takeout Delivery Manchester NH',
     'Takeout Manchester NH',
     'Delivery Manchester NH'
   ],
@@ -67,7 +67,8 @@ export default function ContactPage() {
               latitude: "42.9756146",
               longitude: "-71.4793305"
             },
-            telephone: "+1-603-555-0199",
+            telephone: "+1-603-206-5203",
+            email: "classicbkc@gmail.com",
             servesCuisine: ["Indian", "Hyderabadi", "Halal"],
             priceRange: "$$",
             acceptsReservations: true,
@@ -129,20 +130,26 @@ export default function ContactPage() {
                 <ContactInfoCard
                   iconName="Phone"
                   title="Call Our Restaurant"
-                  description="(603) 555-0199"
-                  href="tel:6035550199"
+                  description="+1 603-206-5203"
+                  href="tel:+16032065203"
+                />
+
+                <ContactInfoCard
+                  iconName="Mail"
+                  title="Email Us"
+                  description="classicbkc@gmail.com"
+                  href="mailto:classicbkc@gmail.com"
+                />
+
+                <ContactInfoCard
+                  iconName="Clock"
+                  title="Business Hours"
+                  description="Mon, Wed - Sun: 12:00 PM - 12:00 AM | Tue: Closed"
                 />
               </div>
 
-              {/* Hours Card */}
-              <ContactInfoCard
-                iconName="Clock"
-                title="Business Hours"
-                description="Mon - Thu: 11:00 AM - 10:00 PM | Fri - Sat: 11:00 AM - 11:00 PM | Sun: 12:00 PM - 9:30 PM"
-              />
-
               <p className="text-sm text-ivory/70 leading-relaxed">
-                Open seven days a week for dine-in, takeout, delivery, lunch buffet, and catering throughout Manchester and nearby communities.
+                Open six days a week for dine-in, takeout, delivery, and catering throughout Manchester and nearby communities. We are closed on Tuesdays.
               </p>
             </div>
 

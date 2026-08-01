@@ -98,7 +98,7 @@ export default function WhyChooseUs() {
     },
     {
       icon: Calendar,
-      value: 7,
+      value: 6,
       suffix: '',
       label: 'Days a Week Open'
     }

@@ -197,7 +197,7 @@ export default function CateringPage() {
                   'Freshly Prepared on the Day of Your Event',
                   'Authentic Hyderabadi Dum Biryani',
                   '100% Halal Ingredients',
-                  'Professional Buffet Presentation',
+                  'Professional Catering Presentation',
                   'Flexible Menu Customization',
                   'Reliable Delivery & Setup',
                   'Vegetarian & Vegan Options',
@@ -343,7 +343,7 @@ export default function CateringPage() {
                 </div>
               </div>
               <a
-                href="tel:6035550199"
+                href="tel:+16032065203"
                 className="shrink-0 font-plus-jakarta text-xs font-bold uppercase tracking-wider py-4 px-8 rounded-full bg-royal-gold text-primary-black hover:bg-light-gold transition-all duration-300 hover:scale-[1.02] shadow-gold-glow cursor-pointer"
               >
                 Call to Discuss
@@ -506,7 +506,7 @@ export default function CateringPage() {
               </a>
               
               <a
-                href="tel:6035550199"
+                href="tel:+16032065203"
                 className="w-full sm:w-auto font-plus-jakarta text-xs font-bold uppercase tracking-wider py-4 px-8 rounded-full border border-royal-gold text-royal-gold hover:bg-royal-gold/10 transition-all duration-300 flex items-center justify-center gap-2"
               >
                 <Phone size={14} />

@@ -17,7 +17,8 @@ export default function JsonLd() {
     'image': `${SITE_URL}/images/og-image.webp`,
     'logo': `${SITE_URL}/images/logo.png`,
     'priceRange': '$$',
-    'telephone': '(603) 555-0199',
+    'telephone': '+1-603-206-5203',
+    'email': 'classicbkc@gmail.com',
     'url': SITE_URL,
     'hasMenu': `${SITE_URL}/menu`,
     'servesCuisine': ['Indian', 'Hyderabadi', 'Pakistani', 'Halal'],
@@ -37,21 +38,15 @@ export default function JsonLd() {
     'openingHoursSpecification': [
       {
         '@type': 'OpeningHoursSpecification',
-        'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday'],
-        'opens': '11:00',
-        'closes': '22:00'
-      },
-      {
-        '@type': 'OpeningHoursSpecification',
-        'dayOfWeek': ['Friday', 'Saturday'],
-        'opens': '11:00',
-        'closes': '23:00'
-      },
-      {
-        '@type': 'OpeningHoursSpecification',
-        'dayOfWeek': 'Sunday',
+        'dayOfWeek': ['Monday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
         'opens': '12:00',
-        'closes': '21:30'
+        'closes': '00:00'
+      },
+      {
+        '@type': 'OpeningHoursSpecification',
+        'dayOfWeek': 'Tuesday',
+        'opens': '00:00',
+        'closes': '00:00'
       }
     ],
     'sameAs': [FACEBOOK_URL, INSTAGRAM_URL]

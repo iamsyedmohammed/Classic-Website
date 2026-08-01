@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     template: "%s | The Classic Biryani"
   },
   description:
-    "Experience authentic Hyderabadi Dum Biryani, Hand Zabiha Halal kababs, curries, and catering at The Classic Biryani in Manchester, NH. Dine-in, takeout, delivery, and catering available 7 days a week.",
+    "Experience authentic Hyderabadi Dum Biryani, Hand Zabiha Halal kababs, curries, and catering at The Classic Biryani in Manchester, NH. Dine-in, takeout, delivery, and catering available 6 days a week.",
   metadataBase: new URL("https://theclassicbiryani.com"),
   alternates: { canonical: "/" },
   keywords: [
@@ -43,7 +43,6 @@ export const metadata: Metadata = {
     "Indian Food Manchester NH",
     "Hand Zabiha Halal Restaurant NH",
     "Indian Catering Manchester NH",
-    "Lunch Buffet Manchester NH",
     "Takeout Delivery Manchester NH"
   ],
   openGraph: {
@@ -86,8 +85,9 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${lora.variable} ${poppins.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col bg-primary-black text-ivory">
+      <body className="min-h-full flex flex-col bg-primary-black text-ivory" suppressHydrationWarning>
         <JsonLd />
         {children}
         <WhatsAppFloating />

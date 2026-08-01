@@ -90,7 +90,7 @@ export default function PromoPopup() {
 
             {/* Exclusions Footer Disclaimer */}
             <p className="mt-6 text-xs text-zinc-400 font-body">
-              *excludes buffet & catering
+              *excludes catering
             </p>
           </motion.div>
         </div>

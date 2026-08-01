@@ -118,7 +118,7 @@ export default function ContactForm() {
           <input
             id="contact-phone"
             type="tel"
-            placeholder="(603) 555-0100"
+            placeholder="+1 603-206-5203"
             {...register('phone')}
             className={`h-[56px] px-5 rounded-2xl bg-primary-black border text-sm text-ivory placeholder-ivory/30 focus:outline-none focus:border-royal-gold transition-colors duration-300 ${
               errors.phone ? 'border-red-500' : 'border-royal-gold/20'

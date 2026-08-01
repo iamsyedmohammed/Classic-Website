@@ -72,7 +72,8 @@ export default function PrivacyPage() {
             If you have questions about this policy, please reach out to us at:
             <br /><strong className="text-royal-gold">Classic Biryani Kabab & Curry</strong>
             <br />484 South Main Street, Manchester, NH 03102
-            <br />Phone: (603) 555-0199
+            <br />Phone: +1 603-206-5203
+            <br />Email: classicbkc@gmail.com
           </p>
         </div>
       </main>
